@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://minigames/PipeMinigame/PipeMap/pipe_tileset.tres" type="TileSet" id=1]
+
+[node name="PipeMap" type="TileMap"]
+scale = Vector2( 0.2, 0.2 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 340, 340 )
+format = 1

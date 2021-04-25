@@ -1,0 +1,127 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/UI/meters/energy/meter_icon_holder_yellow.png" type="Texture" id=1]
+[ext_resource path="res://assets/UI/meters/energy/energy_bar_middle.png" type="Texture" id=2]
+[ext_resource path="res://assets/UI/meters/energy/titled_yellow_power_icon.png" type="Texture" id=3]
+[ext_resource path="res://assets/temp/factory.png" type="Texture" id=4]
+[ext_resource path="res://screens/main/MainScreen.gd" type="Script" id=5]
+
+[node name="MainScreen" type="Control"]
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="EnergyBar" type="Control" parent="UI"]
+anchor_left = 0.0333333
+anchor_top = 0.28125
+anchor_right = 0.21
+anchor_bottom = 0.708008
+margin_bottom = 3.05176e-05
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Bar" type="TextureProgress" parent="UI/EnergyBar"]
+anchor_left = 0.16129
+anchor_top = 0.0477387
+anchor_right = 0.403226
+anchor_bottom = 0.829146
+value = 100.0
+texture_progress = ExtResource( 2 )
+fill_mode = 3
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="IconHolder" type="TextureRect" parent="UI/EnergyBar/Bar"]
+anchor_left = -0.259666
+anchor_top = 0.953473
+anchor_right = 2.50956
+anchor_bottom = 1.16264
+margin_right = 7.62939e-06
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Icon" type="TextureRect" parent="UI/EnergyBar/Bar/IconHolder"]
+anchor_left = 0.164869
+anchor_top = 0.36706
+anchor_right = 0.692647
+anchor_bottom = 0.887608
+margin_bottom = 1.52588e-05
+rect_rotation = -25.0
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="SortingButton" type="TextureButton" parent="UI"]
+anchor_left = 0.398024
+anchor_top = 0.387601
+anchor_right = 0.644691
+anchor_bottom = 0.545804
+margin_left = 1.52588e-05
+texture_normal = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="PaperButton" type="TextureButton" parent="UI"]
+self_modulate = Color( 0.866667, 0.937255, 0.737255, 1 )
+anchor_left = 0.684469
+anchor_top = 0.0933955
+anchor_right = 0.849469
+anchor_bottom = 0.199841
+margin_left = 1.52588e-05
+texture_normal = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="GlassButton" type="TextureButton" parent="UI"]
+self_modulate = Color( 0.254902, 0.709804, 0.8, 1 )
+anchor_left = 0.151901
+anchor_top = 0.0827947
+anchor_right = 0.316901
+anchor_bottom = 0.18924
+margin_left = 1.52588e-05
+texture_normal = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="MetalButton" type="TextureButton" parent="UI"]
+self_modulate = Color( 0.458824, 0.45098, 0.45098, 1 )
+anchor_left = 0.16031
+anchor_top = 0.799617
+anchor_right = 0.32531
+anchor_bottom = 0.906062
+margin_left = 1.52588e-05
+texture_normal = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="PlasticButton" type="TextureButton" parent="UI"]
+self_modulate = Color( 0.552941, 0.541176, 0.227451, 1 )
+anchor_left = 0.712498
+anchor_top = 0.796332
+anchor_right = 0.877498
+anchor_bottom = 0.902778
+margin_left = 1.52588e-05
+texture_normal = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}

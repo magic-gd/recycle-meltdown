@@ -1,0 +1,186 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/fonts/roboto_20.tres" type="DynamicFont" id=1]
+[ext_resource path="res://UI/dashboard/MaterialList.gd" type="Script" id=2]
+
+[node name="MaterialList" type="Control"]
+anchor_right = 0.27
+anchor_bottom = 0.210938
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_right = 326.0
+margin_bottom = 297.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WasteMaterials" type="VBoxContainer" parent="HBoxContainer"]
+margin_right = 161.0
+margin_bottom = 297.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PaperWastePanel" type="Panel" parent="HBoxContainer/WasteMaterials"]
+margin_right = 161.0
+margin_bottom = 71.0
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/WasteMaterials/PaperWastePanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 1 )
+text = "Paper: 0"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlasticWastePanel" type="Panel" parent="HBoxContainer/WasteMaterials"]
+margin_top = 75.0
+margin_right = 161.0
+margin_bottom = 146.0
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/WasteMaterials/PlasticWastePanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 1 )
+text = "Plastic: 0"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GlassWastePanel" type="Panel" parent="HBoxContainer/WasteMaterials"]
+margin_top = 150.0
+margin_right = 161.0
+margin_bottom = 221.0
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/WasteMaterials/GlassWastePanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 1 )
+text = "Glass: 0"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MetalWastePanel" type="Panel" parent="HBoxContainer/WasteMaterials"]
+margin_top = 225.0
+margin_right = 161.0
+margin_bottom = 297.0
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/WasteMaterials/MetalWastePanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 1 )
+text = "Metal: 0"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Materials" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 165.0
+margin_right = 326.0
+margin_bottom = 297.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PaperPanel" type="Panel" parent="HBoxContainer/Materials"]
+margin_right = 161.0
+margin_bottom = 71.0
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/Materials/PaperPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 1 )
+text = "Paper: 0"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlasticPanel" type="Panel" parent="HBoxContainer/Materials"]
+margin_top = 75.0
+margin_right = 161.0
+margin_bottom = 146.0
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/Materials/PlasticPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 1 )
+text = "Plastic: 0"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GlassPanel" type="Panel" parent="HBoxContainer/Materials"]
+margin_top = 150.0
+margin_right = 161.0
+margin_bottom = 221.0
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/Materials/GlassPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 1 )
+text = "Glass: 0"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MetalPanel" type="Panel" parent="HBoxContainer/Materials"]
+margin_top = 225.0
+margin_right = 161.0
+margin_bottom = 297.0
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/Materials/MetalPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 1 )
+text = "Metal: 0"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

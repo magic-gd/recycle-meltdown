@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://assets/UI/meters/energy/meter_icon_holder_yellow.png" type="Texture" id=1]
-[ext_resource path="res://assets/UI/meters/energy/energy_bar_middle.png" type="Texture" id=2]
-[ext_resource path="res://assets/UI/meters/energy/titled_yellow_power_icon.png" type="Texture" id=3]
+[ext_resource path="res://UI/info panels/SortingFactoryInfoPanel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/temp/factory.png" type="Texture" id=4]
 [ext_resource path="res://screens/main/MainScreen.gd" type="Script" id=5]
+[ext_resource path="res://UI/dashboard/Dashboard.tscn" type="PackedScene" id=6]
 
 [node name="MainScreen" type="Control"]
 script = ExtResource( 5 )
@@ -14,59 +13,11 @@ __meta__ = {
 
 [node name="UI" type="CanvasLayer" parent="."]
 
-[node name="EnergyBar" type="Control" parent="UI"]
-anchor_left = 0.0333333
-anchor_top = 0.28125
-anchor_right = 0.21
-anchor_bottom = 0.708008
-margin_bottom = 3.05176e-05
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="Bar" type="TextureProgress" parent="UI/EnergyBar"]
-anchor_left = 0.16129
-anchor_top = 0.0477387
-anchor_right = 0.403226
-anchor_bottom = 0.829146
-value = 100.0
-texture_progress = ExtResource( 2 )
-fill_mode = 3
-nine_patch_stretch = true
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="IconHolder" type="TextureRect" parent="UI/EnergyBar/Bar"]
-anchor_left = -0.259666
-anchor_top = 0.953473
-anchor_right = 2.50956
-anchor_bottom = 1.16264
-margin_right = 7.62939e-06
-texture = ExtResource( 1 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="Icon" type="TextureRect" parent="UI/EnergyBar/Bar/IconHolder"]
-anchor_left = 0.164869
-anchor_top = 0.36706
-anchor_right = 0.692647
-anchor_bottom = 0.887608
-margin_bottom = 1.52588e-05
-rect_rotation = -25.0
-texture = ExtResource( 3 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
 [node name="SortingButton" type="TextureButton" parent="UI"]
-anchor_left = 0.398024
-anchor_top = 0.387601
-anchor_right = 0.644691
-anchor_bottom = 0.545804
+anchor_left = 0.383176
+anchor_top = 0.279719
+anchor_right = 0.629843
+anchor_bottom = 0.437922
 margin_left = 1.52588e-05
 texture_normal = ExtResource( 4 )
 expand = true
@@ -102,10 +53,10 @@ __meta__ = {
 
 [node name="MetalButton" type="TextureButton" parent="UI"]
 self_modulate = Color( 0.458824, 0.45098, 0.45098, 1 )
-anchor_left = 0.16031
-anchor_top = 0.799617
-anchor_right = 0.32531
-anchor_bottom = 0.906062
+anchor_left = 0.234552
+anchor_top = 0.587333
+anchor_right = 0.399551
+anchor_bottom = 0.693778
 margin_left = 1.52588e-05
 texture_normal = ExtResource( 4 )
 expand = true
@@ -115,13 +66,49 @@ __meta__ = {
 
 [node name="PlasticButton" type="TextureButton" parent="UI"]
 self_modulate = Color( 0.552941, 0.541176, 0.227451, 1 )
-anchor_left = 0.712498
-anchor_top = 0.796332
-anchor_right = 0.877498
-anchor_bottom = 0.902778
+anchor_left = 0.715468
+anchor_top = 0.584048
+anchor_right = 0.880468
+anchor_bottom = 0.690494
 margin_left = 1.52588e-05
 texture_normal = ExtResource( 4 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": true
 }
+
+[node name="Dashboard" parent="UI" instance=ExtResource( 6 )]
+anchor_left = -0.0121259
+anchor_top = 0.700484
+anchor_right = 0.987874
+anchor_bottom = 1.00029
+
+[node name="InfoPanel" type="Control" parent="UI"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OutsideInfoPanel" type="TextureButton" parent="UI/InfoPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 3.56357
+margin_top = -0.890869
+margin_right = 3.5636
+margin_bottom = -0.890869
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="UI/InfoPanel"]
+anchor_left = 0.133255
+anchor_top = 0.16843
+anchor_right = 0.883255
+anchor_bottom = 0.607883
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="SortingFactoryInfoPanel" parent="UI/InfoPanel/Panel" instance=ExtResource( 1 )]

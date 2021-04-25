@@ -1,14 +1,20 @@
 extends Control
 
+onready var info_panel = $UI/InfoPanel
+onready var info_panel_panel = $UI/InfoPanel/Panel # what u lookin at
+
 func _ready():
 	_connect()
+	info_panel.visible = false
 
 func _connect():
-	$UI/SortingButton.connect("pressed", self, "goto_factory", ["sorting"])
+	$UI/SortingButton.connect("pressed", self, "_on_sorting_pressed")
 	$UI/GlassButton.connect("pressed", self, "goto_factory", ["glass"])
 	$UI/PaperButton.connect("pressed", self, "goto_factory", ["paper"])
 	$UI/MetalButton.connect("pressed", self, "goto_factory", ["metal"])
 	$UI/PlasticButton.connect("pressed", self, "goto_factory", ["plastic"])
+	
+	$UI/InfoPanel/OutsideInfoPanel.connect("pressed", self, "_hide_info_panel")
 
 func goto_factory(type):
 	match type:
@@ -22,3 +28,19 @@ func goto_factory(type):
 			get_tree().change_scene("res://screens/MetalFactoryScreen.tscn")
 		"plastic":
 			pass
+
+func _hide_info_panel():
+	info_panel.visible = false
+
+func _show_info_panel(panel_path=null):
+	if panel_path:
+		var panel = load(panel_path).instance()
+		info_panel_panel.add_child(panel)
+	info_panel.visible = true
+
+func _clear_info_panel():
+	for child in info_panel_panel.get_children():
+		child.queue_free()
+
+func _on_sorting_pressed():
+	_show_info_panel("res://UI/info panels/SortingFactoryInfoPanel.tscn")

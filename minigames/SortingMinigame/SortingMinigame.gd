@@ -2,6 +2,8 @@ extends Node2D
 
 onready var spawn_timer = $SpawnTimer
 
+var spawn_table
+
 func _ready():
 	_connect()
 	

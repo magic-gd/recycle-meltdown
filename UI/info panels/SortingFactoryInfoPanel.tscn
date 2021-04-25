@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://UI/info panels/SortingFactoryInfoPanel.gd" type="Script" id=1]
+[ext_resource path="res://assets/fonts/roboto_20.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/fonts/roboto_42.tres" type="DynamicFont" id=3]
+
+[sub_resource type="Theme" id=1]
+default_font = ExtResource( 2 )
+
+[node name="SortingFactoryInfoPanel" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource( 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BG" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SortingFactory" type="Label" parent="."]
+anchor_left = 0.0216667
+anchor_top = 0.046875
+anchor_right = 0.988333
+anchor_bottom = 0.0957031
+custom_fonts/font = ExtResource( 3 )
+text = "Sorting Factory"
+align = 1
+valign = 1
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ConfigureButton" type="Button" parent="."]
+anchor_left = 0.35042
+anchor_top = 0.366258
+anchor_right = 0.65042
+anchor_bottom = 0.475147
+text = "Configure"
+__meta__ = {
+"_edit_use_anchors_": true
+}

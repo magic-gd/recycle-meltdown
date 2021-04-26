@@ -1,9 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://UI/dashboard/MaterialList.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/UI/meters/energy/meter_icon_holder_yellow.png" type="Texture" id=2]
-[ext_resource path="res://assets/UI/meters/energy/titled_yellow_power_icon.png" type="Texture" id=3]
-[ext_resource path="res://assets/UI/meters/energy/energy_bar_middle.png" type="Texture" id=4]
+[ext_resource path="res://UI/components/EnergyBar.tscn" type="PackedScene" id=2]
 
 [node name="Dashboard" type="Control"]
 anchor_left = -0.00583333
@@ -18,51 +16,6 @@ anchor_left = 0.316109
 anchor_top = 0.0148977
 anchor_right = 0.859442
 anchor_bottom = 0.982324
+show_waste = false
 
-[node name="EnergyBar" type="Control" parent="."]
-anchor_left = 0.119365
-anchor_top = 0.0703797
-anchor_right = 0.207698
-anchor_bottom = 0.741389
-margin_bottom = 3.05176e-05
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="Bar" type="TextureProgress" parent="EnergyBar"]
-anchor_left = 0.223178
-anchor_top = 0.106897
-anchor_right = 0.65714
-anchor_bottom = 0.888451
-value = 100.0
-texture_progress = ExtResource( 4 )
-fill_mode = 3
-nine_patch_stretch = true
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="IconHolder" type="TextureRect" parent="EnergyBar/Bar"]
-anchor_left = -0.26087
-anchor_top = 0.925466
-anchor_right = 1.95652
-anchor_bottom = 1.1677
-margin_right = 7.62939e-06
-texture = ExtResource( 2 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="Icon" type="TextureRect" parent="EnergyBar/Bar/IconHolder"]
-anchor_left = 0.176471
-anchor_top = 0.410256
-anchor_right = 0.666667
-anchor_bottom = 0.897435
-margin_bottom = 1.52588e-05
-rect_rotation = -25.0
-texture = ExtResource( 3 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": true
-}
+[node name="EnergyBar" parent="." instance=ExtResource( 2 )]

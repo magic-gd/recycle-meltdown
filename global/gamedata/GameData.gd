@@ -8,6 +8,13 @@ var resources = {
 	"plastic": 0,
 	"glass": 0,
 	"metal": 0,
+}
+
+var factory_output = {
+	"paper": 0,
+	"plastic": 0,
+	"glass": 0,
+	"metal": 0,
 	"paper_waste": 0,
 	"plastic_waste": 0,
 	"glass_waste": 0,

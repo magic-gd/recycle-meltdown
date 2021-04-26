@@ -8,6 +8,7 @@ extents = Vector2( 29.5293, 30.2814 )
 
 [node name="TrashItem" type="Area2D"]
 script = ExtResource( 2 )
+type = "glass"
 
 [node name="Sprite" type="Sprite" parent="."]
 modulate = Color( 0.0588235, 0.254902, 0.0784314, 1 )

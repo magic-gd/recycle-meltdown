@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://UI/info panels/SortingFactoryInfoPanel.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/roboto_20.tres" type="DynamicFont" id=2]
 [ext_resource path="res://assets/fonts/roboto_42.tres" type="DynamicFont" id=3]
+[ext_resource path="res://UI/dashboard/MaterialList.tscn" type="PackedScene" id=4]
 
 [sub_resource type="Theme" id=1]
 default_font = ExtResource( 2 )
@@ -25,11 +26,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SortingFactory" type="Label" parent="."]
-anchor_left = 0.0216667
-anchor_top = 0.046875
-anchor_right = 0.988333
-anchor_bottom = 0.0957031
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SortingFactory" type="Label" parent="VBoxContainer"]
+margin_right = 600.0
+margin_bottom = 50.0
 custom_fonts/font = ExtResource( 3 )
 text = "Sorting Factory"
 align = 1
@@ -39,11 +45,20 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="ConfigureButton" type="Button" parent="."]
-anchor_left = 0.35042
-anchor_top = 0.366258
-anchor_right = 0.65042
-anchor_bottom = 0.475147
+[node name="MaterialList" parent="VBoxContainer" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 54.0
+margin_right = 600.0
+margin_bottom = 970.0
+size_flags_vertical = 3
+show_materials = false
+
+[node name="ConfigureButton" type="Button" parent="VBoxContainer"]
+margin_top = 974.0
+margin_right = 600.0
+margin_bottom = 1024.0
+rect_min_size = Vector2( 0, 50 )
 text = "Configure"
 __meta__ = {
 "_edit_use_anchors_": true

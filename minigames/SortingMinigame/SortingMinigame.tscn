@@ -100,7 +100,7 @@ __meta__ = {
 }
 
 [node name="PaperScoreLabel" type="Label" parent="UI/ScoreDisplay"]
-margin_right = 148.0
+margin_right = 147.0
 margin_bottom = 29.0
 text = "Paper: 10"
 align = 1
@@ -108,7 +108,7 @@ valign = 1
 
 [node name="PlasticScoreLabel" type="Label" parent="UI/ScoreDisplay"]
 margin_top = 33.0
-margin_right = 148.0
+margin_right = 147.0
 margin_bottom = 62.0
 text = "Paper: 10"
 align = 1
@@ -116,7 +116,7 @@ valign = 1
 
 [node name="GlassScoreLabel" type="Label" parent="UI/ScoreDisplay"]
 margin_top = 66.0
-margin_right = 148.0
+margin_right = 147.0
 margin_bottom = 95.0
 text = "Paper: 10"
 align = 1
@@ -124,7 +124,7 @@ valign = 1
 
 [node name="MetalScoreLabel" type="Label" parent="UI/ScoreDisplay"]
 margin_top = 99.0
-margin_right = 148.0
+margin_right = 147.0
 margin_bottom = 128.0
 text = "Paper: 10"
 align = 1

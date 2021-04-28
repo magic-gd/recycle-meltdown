@@ -93,11 +93,17 @@ func spawn_trash():
 	trash_item.rotation_degrees = randi() % 360
 	$Trash.add_child(trash_item)
 
-func end_game(reason="none"):
+func end_game(reason=null):
+	match reason:
+		"energy":
+			reason = "Ran out of energy."
+		"emissions":
+			reason = "Emission limit reached."
 	_score_collection_areas()
 	_save_score_to_gamedata()
 	get_tree().paused = true
 	end_screen.display_score(score)
+	end_screen.set_reason(reason)
 	end_screen.visible = true
 
 func _init_spawn_table():

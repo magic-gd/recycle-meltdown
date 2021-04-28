@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/fonts/roboto_42.tres" type="DynamicFont" id=1]
 [ext_resource path="res://minigames/SortingMinigame/EndScreen.gd" type="Script" id=2]
+[ext_resource path="res://assets/fonts/roboto_20.tres" type="DynamicFont" id=3]
 
 [sub_resource type="Theme" id=1]
 default_font = ExtResource( 1 )
@@ -26,9 +27,9 @@ __meta__ = {
 }
 
 [node name="ResultsLabel" type="Label" parent="Panel"]
-anchor_top = 0.0335106
+anchor_top = 0.248537
 anchor_right = 1.0
-anchor_bottom = 0.138113
+anchor_bottom = 0.353139
 text = "Results:"
 align = 1
 valign = 1
@@ -36,17 +37,39 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
+[node name="ReasonLabel" type="Label" parent="Panel"]
+anchor_top = 0.131382
+anchor_right = 1.0
+anchor_bottom = 0.235985
+custom_fonts/font = ExtResource( 3 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="FinishedLabel" type="Label" parent="Panel"]
+anchor_top = 0.0267796
+anchor_right = 1.0
+anchor_bottom = 0.131382
+text = "Finished!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
 [node name="Results" type="VBoxContainer" parent="Panel"]
-anchor_left = 0.192501
-anchor_top = 0.201064
-anchor_right = 0.833867
-anchor_bottom = 0.908176
+anchor_left = 0.191651
+anchor_top = 0.360012
+anchor_right = 0.772296
+anchor_bottom = 0.851644
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
 [node name="PaperScoreLabel" type="Label" parent="Panel/Results"]
-margin_right = 337.0
+margin_right = 306.0
 margin_bottom = 50.0
 text = "Paper: 10"
 align = 1
@@ -54,7 +77,7 @@ valign = 1
 
 [node name="PlasticScoreLabel" type="Label" parent="Panel/Results"]
 margin_top = 54.0
-margin_right = 337.0
+margin_right = 306.0
 margin_bottom = 104.0
 text = "Paper: 10"
 align = 1
@@ -62,7 +85,7 @@ valign = 1
 
 [node name="GlassScoreLabel" type="Label" parent="Panel/Results"]
 margin_top = 108.0
-margin_right = 337.0
+margin_right = 306.0
 margin_bottom = 158.0
 text = "Paper: 10"
 align = 1
@@ -70,17 +93,17 @@ valign = 1
 
 [node name="MetalScoreLabel" type="Label" parent="Panel/Results"]
 margin_top = 162.0
-margin_right = 337.0
+margin_right = 306.0
 margin_bottom = 212.0
 text = "Paper: 10"
 align = 1
 valign = 1
 
 [node name="BackButton" type="Button" parent="Panel"]
-anchor_left = 0.400199
-anchor_top = 0.770744
-anchor_right = 0.601337
-anchor_bottom = 0.887899
+anchor_left = 0.405265
+anchor_top = 0.862898
+anchor_right = 0.606403
+anchor_bottom = 0.980053
 text = "Back"
 __meta__ = {
 "_edit_use_anchors_": true

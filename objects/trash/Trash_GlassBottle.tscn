@@ -1,19 +1,19 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://assets/temp/white.png" type="Texture" id=1]
+[ext_resource path="res://assets/objects/trash/bottles.png" type="Texture" id=1]
 [ext_resource path="res://objects/trash/TrashItem.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 29.5293, 30.2814 )
+extents = Vector2( 23.916, 38.9031 )
 
 [node name="TrashItem" type="Area2D"]
 script = ExtResource( 2 )
 type = "glass"
 
 [node name="Sprite" type="Sprite" parent="."]
-modulate = Color( 0.0588235, 0.254902, 0.0784314, 1 )
-scale = Vector2( 0.25, 0.25 )
+scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 1 )
+hframes = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.471924, 0.471954 )

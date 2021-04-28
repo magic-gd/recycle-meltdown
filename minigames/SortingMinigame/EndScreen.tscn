@@ -1,0 +1,87 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/fonts/roboto_42.tres" type="DynamicFont" id=1]
+[ext_resource path="res://minigames/SortingMinigame/EndScreen.gd" type="Script" id=2]
+
+[sub_resource type="Theme" id=1]
+default_font = ExtResource( 1 )
+
+[node name="EndScreen" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = SubResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 0.0768107
+anchor_top = 0.263176
+anchor_right = 0.955144
+anchor_bottom = 0.729973
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ResultsLabel" type="Label" parent="Panel"]
+anchor_top = 0.0335106
+anchor_right = 1.0
+anchor_bottom = 0.138113
+text = "Results:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Results" type="VBoxContainer" parent="Panel"]
+anchor_left = 0.192501
+anchor_top = 0.201064
+anchor_right = 0.833867
+anchor_bottom = 0.908176
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="PaperScoreLabel" type="Label" parent="Panel/Results"]
+margin_right = 338.0
+margin_bottom = 50.0
+text = "Paper: 10"
+align = 1
+valign = 1
+
+[node name="PlasticScoreLabel" type="Label" parent="Panel/Results"]
+margin_top = 54.0
+margin_right = 338.0
+margin_bottom = 104.0
+text = "Paper: 10"
+align = 1
+valign = 1
+
+[node name="GlassScoreLabel" type="Label" parent="Panel/Results"]
+margin_top = 108.0
+margin_right = 338.0
+margin_bottom = 158.0
+text = "Paper: 10"
+align = 1
+valign = 1
+
+[node name="MetalScoreLabel" type="Label" parent="Panel/Results"]
+margin_top = 162.0
+margin_right = 338.0
+margin_bottom = 212.0
+text = "Paper: 10"
+align = 1
+valign = 1
+
+[node name="BackButton" type="Button" parent="Panel"]
+anchor_left = 0.400199
+anchor_top = 0.770744
+anchor_right = 0.601337
+anchor_bottom = 0.887899
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": true
+}

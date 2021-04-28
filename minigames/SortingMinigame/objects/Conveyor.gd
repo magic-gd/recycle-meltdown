@@ -6,4 +6,4 @@ func _process(delta):
 	for area in get_overlapping_areas():
 		if area is TrashItem:
 			if not area.pressed:
-				area.position.y += speed * delta
+				area.position.y -= speed * delta

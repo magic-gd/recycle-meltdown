@@ -19,3 +19,7 @@ anchor_bottom = 0.982324
 show_waste = false
 
 [node name="EnergyBar" parent="." instance=ExtResource( 2 )]
+anchor_left = 0.03
+anchor_top = 0.123778
+anchor_right = 0.116667
+anchor_bottom = 0.882735

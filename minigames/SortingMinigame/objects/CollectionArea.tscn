@@ -1,10 +1,57 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://minigames/SortingMinigame/objects/CollectionArea.gd" type="Script" id=1]
 [ext_resource path="res://assets/temp/white.png" type="Texture" id=2]
+[ext_resource path="res://assets/fonts/roboto_24.tres" type="DynamicFont" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 61.2498, 100.156 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "contanimated"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.901961, 0.105882, 0.105882, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "reset"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "ship"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.203922, 0.862745, 0.278431, 1 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [node name="CollectionArea" type="Area2D"]
 script = ExtResource( 1 )
@@ -16,3 +63,35 @@ texture = ExtResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 shape = SubResource( 1 )
+
+[node name="TextureProgress" type="TextureProgress" parent="."]
+self_modulate = Color( 0.105882, 0.266667, 0.0862745, 1 )
+margin_left = 33.0
+margin_top = -102.0
+margin_right = 64.0
+margin_bottom = 102.0
+value = 50.0
+texture_progress = ExtResource( 2 )
+fill_mode = 3
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="."]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = -38.0429
+margin_top = -95.7442
+margin_right = 36.9571
+margin_bottom = -66.7442
+custom_fonts/font = ExtResource( 3 )
+text = "Plastic"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+pause_mode = 2
+anims/contanimated = SubResource( 2 )
+anims/reset = SubResource( 3 )
+anims/ship = SubResource( 4 )

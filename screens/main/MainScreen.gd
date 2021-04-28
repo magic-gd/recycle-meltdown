@@ -1,5 +1,7 @@
 extends Control
 
+const SORTING_PANEL_PATH = "res://UI/info panels/SortingFactoryInfoPanel.tscn"
+
 onready var info_panel = $UI/InfoPanel
 onready var info_panel_panel = $UI/InfoPanel/Panel # what u lookin at
 
@@ -18,8 +20,6 @@ func _connect():
 
 func goto_factory(type):
 	match type:
-		"sorting":
-			get_tree().change_scene("res://screens/SortingFactoryScreen.tscn")
 		"glass":
 			get_tree().change_scene("res://screens/GlassFactoryScreen.tscn")
 		"paper":
@@ -43,4 +43,4 @@ func _clear_info_panel():
 		child.queue_free()
 
 func _on_sorting_pressed():
-	_show_info_panel("res://UI/info panels/SortingFactoryInfoPanel.tscn")
+	_show_info_panel(SORTING_PANEL_PATH)

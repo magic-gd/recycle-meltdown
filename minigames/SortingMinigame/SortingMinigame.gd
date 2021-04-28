@@ -3,14 +3,15 @@ extends Node2D
 onready var spawn_timer = $SpawnTimer
 onready var end_screen = $UI/EndScreen
 
-export var speedup_on = 5
 export var base_speed = 100
-export var max_emissions = 100
-export var max_energy = 1000.0
-export var energy_usage = 5.0
 export var base_spawn_rate = 1.0
+export var speedup_on = 5
+export var energy_usage = 5.0
+export var max_emissions = 20
+export var max_energy = 1000.0
 
 var spawn_table
+var spawn_table_total_weight
 
 var energy = 1000.0 setget set_energy
 var speed setget set_speed
@@ -21,7 +22,7 @@ var score = {
 	"glass": 0,
 	"metal": 0,
 }
-var emissions = 0 setget set_emissions
+var emissions = 0.0 setget set_emissions
 
 var streak = 0
 var speedup_factor = 1.0
@@ -53,8 +54,10 @@ func set_emissions(p_emissions):
 		end_game("emissions")
 
 func _ready():
-	_connect()
 	randomize()
+	_connect()
+	_init_spawn_table()
+	_update_score_display()
 	
 	end_screen.visible = false
 	
@@ -92,10 +95,25 @@ func spawn_trash():
 
 func end_game(reason="none"):
 	_score_collection_areas()
+	_save_score_to_gamedata()
 	get_tree().paused = true
 	end_screen.display_score(score)
 	end_screen.visible = true
-	pass
+
+func _init_spawn_table():
+	# Setup table for weighted random selection
+	spawn_table_total_weight = 0.0
+	spawn_table = GameData.waste_spawn_table.duplicate(true)
+	
+	for item in spawn_table:
+		spawn_table_total_weight += spawn_table[item]
+		spawn_table[item] = spawn_table_total_weight
+
+func _save_score_to_gamedata():
+	GameData.factory_output["paper_waste"] = score["paper"]
+	GameData.factory_output["plastic_waste"] = score["plastic"]
+	GameData.factory_output["glass_waste"] = score["glass"]
+	GameData.factory_output["metal_waste"] = score["metal"]
 
 func _score_collection_areas():
 	for collection_area in $CollectionAreas.get_children():
@@ -104,6 +122,7 @@ func _score_collection_areas():
 func _on_score(type, amount):
 	if not type in score: return
 	score[type] += amount
+	_update_score_display()
 
 func _on_collected(type):
 	print("collected")
@@ -124,8 +143,9 @@ func _speed_up():
 	set_spawn_rate(base_spawn_rate / speedup_factor)
 
 func _reset_speed():
-	speedup_factor = 0.5
-	_speed_up()
+	speedup_factor = 1.0
+	set_speed(base_speed)
+	set_spawn_rate(base_spawn_rate)
 
 func _on_burned(item):
 	print("burned %s" % item.emission)
@@ -135,10 +155,28 @@ func _on_burned(item):
 	if item.type != "waste":
 		_reset_speed()
 
+func _update_score_display():
+	$UI/ScoreDisplay/PaperScoreLabel.text = "Paper: %s" % score["paper"]
+	$UI/ScoreDisplay/PlasticScoreLabel.text = "Plastic: %s" % score["plastic"]
+	$UI/ScoreDisplay/GlassScoreLabel.text = "Glass: %s" % score["glass"]
+	$UI/ScoreDisplay/MetalScoreLabel.text = "Metal: %s" % score["metal"]
+
 func _get_trash_item():
-	var trash_item
-	match randi() % 100000:
-		0: trash_item = preload("res://objects/trash/Trash_Newspaper.tscn").instance()
-		_: trash_item = preload("res://objects/trash/Trash_GlassBottle.tscn").instance()
+	var trash_item = null
+	var spawn_item_type = ""
+	# Weighted random selection
+	var roll = rand_range(0, spawn_table_total_weight)
+	for item_type in spawn_table:
+		if spawn_table[item_type] > roll:
+			spawn_item_type = item_type
+			break
+	
+	print("spawning %s" % spawn_item_type)
+	match spawn_item_type:
+		"paper": trash_item = preload("res://objects/trash/Trash_Paper.tscn").instance()
+		"plastic": trash_item = preload("res://objects/trash/Trash_Plastic.tscn").instance()
+		"glass": trash_item = preload("res://objects/trash/Trash_Glass.tscn").instance()
+		"metal": trash_item = preload("res://objects/trash/Trash_Metal.tscn").instance()
+		"hazardous": trash_item = preload("res://objects/trash/Trash_Hazardous.tscn").instance()
 	
 	return trash_item

@@ -24,6 +24,14 @@ var factory_output = {
 var data = {
 }
 
+var waste_spawn_table = {
+	"paper": 10.0,
+	"plastic": 10.0,
+	"glass": 8.0,
+	"metal": 5.0,
+	"hazardous": 0.5
+}
+
 func change_resource(type, amount):
 	if not resources.has(type): return
 	resources[type] += amount

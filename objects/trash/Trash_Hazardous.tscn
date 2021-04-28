@@ -4,15 +4,18 @@
 [ext_resource path="res://objects/trash/TrashItem.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 30.3013, 30.3821 )
+extents = Vector2( 23.306, 23.0286 )
 
 [node name="TrashItem" type="Area2D"]
 script = ExtResource( 2 )
-paper = 5
+type = "hazardous"
+emission = 10.0
+fuel = 10.0
 
 [node name="Sprite" type="Sprite" parent="."]
-modulate = Color( 0.470588, 0.588235, 0.596078, 1 )
-scale = Vector2( 0.25, 0.25 )
+self_modulate = Color( 0, 1, 0.203922, 1 )
+position = Vector2( 0, -2.38419e-07 )
+scale = Vector2( 0.18935, 0.18935 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

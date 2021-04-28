@@ -2,9 +2,9 @@ class_name TrashItem
 extends Area2D
 
 export var type = "paper"
-export var size = 1
-export var emission = 1
-export var fuel = 1
+export var size = 1.0
+export var emission = 1.0
+export var fuel = 1.0
 
 export var draggable = true
 

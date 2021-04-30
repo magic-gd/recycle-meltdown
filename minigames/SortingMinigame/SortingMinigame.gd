@@ -83,6 +83,8 @@ func _connect():
 		collection_area.connect("mistake", self, "_on_mistake")
 	
 	$Incinerator.connect("burned", self, "_on_burned")
+	$UI/MenuButton.connect("exit", self, "_goto_mainscreen")
+	$UI/EndScreen.connect("exit", self, "_goto_mainscreen")
 
 func spawn_trash():
 	var spawn_point = $SpawnPoints.get_child(randi() % $SpawnPoints.get_child_count())
@@ -91,6 +93,7 @@ func spawn_trash():
 	
 	trash_item.position = spawn_point.position
 	trash_item.rotation_degrees = randi() % 360
+	trash_item.scale *= 1.5
 	$Trash.add_child(trash_item)
 
 func end_game(reason=null):
@@ -166,6 +169,10 @@ func _update_score_display():
 	$UI/ScoreDisplay/PlasticScoreLabel.text = "Plastic: %s" % score["plastic"]
 	$UI/ScoreDisplay/GlassScoreLabel.text = "Glass: %s" % score["glass"]
 	$UI/ScoreDisplay/MetalScoreLabel.text = "Metal: %s" % score["metal"]
+
+func _goto_mainscreen():
+	get_tree().paused = false
+	get_tree().change_scene("res://screens/main/MainScreen.tscn")
 
 func _get_trash_item():
 	var trash_item = null

@@ -1,0 +1,77 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/UI/menu/pause_icon.png" type="Texture" id=1]
+[ext_resource path="res://assets/fonts/roboto_24.tres" type="DynamicFont" id=2]
+[ext_resource path="res://UI/menu/MenuButton.gd" type="Script" id=3]
+
+[sub_resource type="Theme" id=1]
+default_font = ExtResource( 2 )
+
+[node name="MenuButton" type="Control"]
+anchor_right = 0.0833333
+anchor_bottom = 0.0488281
+margin_right = -10.0
+margin_bottom = -10.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="PauseButton" type="TextureButton" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture_normal = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="Control" parent="."]
+pause_mode = 2
+visible = false
+anchor_left = 2.675
+anchor_top = 5.575
+anchor_right = 12.15
+anchor_bottom = 17.5
+theme = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Panel" type="Panel" parent="Menu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExitButton" type="Button" parent="Menu"]
+anchor_left = 0.348524
+anchor_top = 0.656866
+anchor_right = 0.649315
+anchor_bottom = 0.816195
+text = "Exit"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ResumeButton" type="Button" parent="Menu"]
+anchor_left = 0.348524
+anchor_top = 0.239251
+anchor_right = 0.649315
+anchor_bottom = 0.39858
+text = "Resume"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label" type="Label" parent="Menu"]
+anchor_top = 0.0838574
+anchor_right = 1.0
+anchor_bottom = 0.144654
+text = "Paused"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}

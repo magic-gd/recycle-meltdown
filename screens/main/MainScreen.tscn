@@ -66,10 +66,10 @@ __meta__ = {
 
 [node name="PlasticButton" type="TextureButton" parent="UI"]
 self_modulate = Color( 0.552941, 0.541176, 0.227451, 1 )
-anchor_left = 0.715468
-anchor_top = 0.584048
-anchor_right = 0.880468
-anchor_bottom = 0.690494
+anchor_left = 0.717568
+anchor_top = 0.585278
+anchor_right = 0.882568
+anchor_bottom = 0.691724
 margin_left = 1.52588e-05
 texture_normal = ExtResource( 4 )
 expand = true

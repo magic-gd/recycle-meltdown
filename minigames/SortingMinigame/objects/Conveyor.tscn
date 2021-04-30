@@ -1,16 +1,21 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://assets/temp/white.png" type="Texture" id=1]
+[ext_resource path="res://assets/minigames/sort minigame/conveyor.png" type="Texture" id=1]
 [ext_resource path="res://minigames/SortingMinigame/objects/Conveyor.gd" type="Script" id=2]
 
+[sub_resource type="AtlasTexture" id=2]
+flags = 38
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 294, 827 )
+
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 125.398, 125.714 )
+extents = Vector2( 140.236, 413.239 )
 
 [node name="Conveyor" type="Area2D"]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 1 )
+texture = SubResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )

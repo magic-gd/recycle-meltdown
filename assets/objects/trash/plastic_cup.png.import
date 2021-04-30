@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bottle_green_tint.png-d7fc3f452563c0386fd14084ee86b196.stex"
+path="res://.import/plastic_cup.png-b0c3f4508512a455cf0b4a18534e2b1c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/objects/trash/bottle_green_tint.png"
-dest_files=[ "res://.import/bottle_green_tint.png-d7fc3f452563c0386fd14084ee86b196.stex" ]
+source_file="res://assets/objects/trash/plastic_cup.png"
+dest_files=[ "res://.import/plastic_cup.png-b0c3f4508512a455cf0b4a18534e2b1c.stex" ]
 
 [params]
 

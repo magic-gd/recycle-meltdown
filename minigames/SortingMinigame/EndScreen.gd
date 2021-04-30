@@ -1,10 +1,12 @@
 extends Control
 
+signal exit
+
 func _ready():
 	_connect()
 
 func _connect():
-	$Panel/BackButton.connect("pressed", self, "_goto_mainscreen")
+	$Panel/BackButton.connect("pressed", self, "_exit")
 
 func display_score(score_dict: Dictionary):
 	$Panel/Results/PaperScoreLabel.text = "Paper: %s" % score_dict["paper"]
@@ -15,6 +17,5 @@ func display_score(score_dict: Dictionary):
 func set_reason(reason_string):
 	$Panel/ReasonLabel.text = reason_string
 
-func _goto_mainscreen():
-	get_tree().paused = false
-	get_tree().change_scene("res://screens/main/MainScreen.tscn")
+func _exit():
+	emit_signal("exit")

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bottle_brown_tint.png-34edb65d70c925f2849317c84be38bcc.stex"
+path="res://.import/rusted_pipe.png-b5147d3ae523081b05a45afc9121f36c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/objects/trash/bottle_brown_tint.png"
-dest_files=[ "res://.import/bottle_brown_tint.png-34edb65d70c925f2849317c84be38bcc.stex" ]
+source_file="res://assets/objects/trash/rusted_pipe.png"
+dest_files=[ "res://.import/rusted_pipe.png-b5147d3ae523081b05a45afc9121f36c.stex" ]
 
 [params]
 

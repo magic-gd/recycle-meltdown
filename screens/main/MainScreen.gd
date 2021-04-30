@@ -23,7 +23,7 @@ func goto_factory(type):
 		"glass":
 			get_tree().change_scene("res://screens/GlassFactoryScreen.tscn")
 		"paper":
-			pass
+			get_tree().change_scene("res://minigames/PaperMinigame/PaperMinigame.tscn")
 		"metal":
 			get_tree().change_scene("res://screens/MetalFactoryScreen.tscn")
 		"plastic":

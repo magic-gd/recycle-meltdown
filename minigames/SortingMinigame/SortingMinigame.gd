@@ -4,7 +4,7 @@ onready var spawn_timer = $SpawnTimer
 onready var end_screen = $UI/EndScreen
 
 export var base_speed = 100
-export var base_spawn_rate = 1.0
+export var base_spawn_rate = 2.0
 export var speedup_on = 5
 export var energy_usage = 5.0
 export var max_emissions = 20
@@ -54,7 +54,10 @@ func set_emissions(p_emissions):
 		end_game("emissions")
 
 func _ready():
+	_apply_upgrades()
+	
 	randomize()
+	
 	_connect()
 	_init_spawn_table()
 	_update_score_display()
@@ -83,8 +86,8 @@ func _connect():
 		collection_area.connect("mistake", self, "_on_mistake")
 	
 	$Incinerator.connect("burned", self, "_on_burned")
-	$UI/MenuButton.connect("exit", self, "_goto_mainscreen")
-	$UI/EndScreen.connect("exit", self, "_goto_mainscreen")
+	$UI/MenuButton.connect("exit", SceneManager, "goto_main")
+	$UI/EndScreen.connect("exit", SceneManager, "goto_main")
 
 func spawn_trash():
 	var spawn_point = $SpawnPoints.get_child(randi() % $SpawnPoints.get_child_count())
@@ -108,6 +111,16 @@ func end_game(reason=null):
 	end_screen.display_score(score)
 	end_screen.set_reason(reason)
 	end_screen.visible = true
+
+func _apply_upgrades():
+	if "sorting_solar" in GameData.upgrades:
+		energy_usage *= 0.8
+	if "more_trash" in GameData.upgrades:
+		base_spawn_rate *= 0.75
+	if "even_more_trash" in GameData.upgrades:
+		base_spawn_rate *= 0.75
+	if "lots_of_trash" in GameData.upgrades:
+		base_spawn_rate *= 0.75
 
 func _init_spawn_table():
 	# Setup table for weighted random selection
@@ -169,10 +182,6 @@ func _update_score_display():
 	$UI/ScoreDisplay/PlasticScoreLabel.text = "Plastic: %s" % score["plastic"]
 	$UI/ScoreDisplay/GlassScoreLabel.text = "Glass: %s" % score["glass"]
 	$UI/ScoreDisplay/MetalScoreLabel.text = "Metal: %s" % score["metal"]
-
-func _goto_mainscreen():
-	get_tree().paused = false
-	get_tree().change_scene("res://screens/main/MainScreen.tscn")
 
 func _get_trash_item():
 	var trash_item = null

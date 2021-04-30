@@ -46,7 +46,7 @@ shape = SubResource( 2 )
 texture = ExtResource( 3 )
 
 [node name="BarrierL" type="StaticBody2D" parent="."]
-position = Vector2( -65.0413, 546.687 )
+position = Vector2( -30, 554.238 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -55,7 +55,7 @@ __meta__ = {
 shape = SubResource( 3 )
 
 [node name="BarrierR" type="StaticBody2D" parent="."]
-position = Vector2( 665.163, 553.036 )
+position = Vector2( 630, 554.924 )
 __meta__ = {
 "_edit_group_": true
 }

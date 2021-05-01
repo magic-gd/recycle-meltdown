@@ -150,4 +150,5 @@ resource_type = "paper"
 format = 1
 
 [connection signal="area_entered" from="Ground/GroundArea" to="Ground" method="_on_GroundArea_area_entered"]
+[connection signal="game_over" from="Player" to="." method="_on_Player_game_over"]
 [connection signal="area_entered" from="Player/PlayerArea" to="Player" method="_on_PlayerArea_area_entered"]

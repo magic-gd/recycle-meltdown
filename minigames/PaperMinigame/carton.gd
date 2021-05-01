@@ -8,10 +8,12 @@ var velocity := Vector2(0, 0)
 var gets_pushed := false
 var push_direction : int = 0
 var initial_pos : Vector2
+var game_manager
 
 func _process(delta):
 	if is_on_floor():
 		velocity.y = 0
+		check_fullness()
 	else:
 		velocity.y = FALLING_VELOCITY
 	
@@ -50,6 +52,10 @@ func enforce_grid(x_pos : float, include_offset : bool) -> float:
 	else:
 		return clean_pos
 	
+func check_fullness():
+	if position.y < MOVE_DIST:
+		game_manager.game_over()
+
 func diff(a : float, b : float) -> float:
 	if a > b: return a - b
 	return b - a

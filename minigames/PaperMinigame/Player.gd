@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+signal game_over
 const SIZE := 60
 const MIN_PUSH_SURFACE := 40
 const EPSILON := 1
@@ -47,7 +48,7 @@ func handle_carton_collision(v : Vector2, c : Object):
 	
 func die():
 	get_parent().remove_child(self)
-	print("ded")
+	emit_signal("game_over")
 
 func destroy_carton(carton):
 	get_parent().remove_child(carton)

@@ -3,7 +3,7 @@ extends KinematicBody2D
 const FALLING_VELOCITY := 100
 const PUSH_VELOCITY := 120
 const MOVE_DIST := 60
-const EPSILON := 0.1
+const EPSILON := 1
 var velocity := Vector2(0, 0)
 var gets_pushed := false
 var push_direction : int = 0
@@ -31,15 +31,7 @@ func _process(delta):
 		position.x = enforce_grid(position.x, true)
 		gets_pushed = false
 		push_direction = 0
-	
-	for i in range(get_slide_count() - 1):
-		var collider = get_slide_collision(i).collider
-		var delta_pos : Vector2 = collider.position - position
-		if collider.is_in_group("player"):
-			if abs(delta_pos.x) <= MOVE_DIST - 2 * EPSILON and delta_pos.y > 0:
-				collider.die()
-			else:
-				print("x:"+str(delta_pos.x)+" y:"+str(delta_pos.y))
+		
 	
 func push(direction):
 	if gets_pushed: return

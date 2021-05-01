@@ -29,7 +29,7 @@ var waste_spawn_table = {
 	"plastic": 10.0,
 	"glass": 8.0,
 	"metal": 5.0,
-	"hazardous": 0.5
+	"organic": 0.5,
 }
 
 func change_resource(type, amount):

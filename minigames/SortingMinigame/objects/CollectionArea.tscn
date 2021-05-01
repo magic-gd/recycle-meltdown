@@ -1,11 +1,12 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://minigames/SortingMinigame/objects/CollectionArea.gd" type="Script" id=1]
 [ext_resource path="res://assets/temp/white.png" type="Texture" id=2]
 [ext_resource path="res://assets/fonts/roboto_24.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/minigames/sort minigame/paper_container.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 61.2498, 100.156 )
+extents = Vector2( 68.9311, 138.601 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "contanimated"
@@ -57,8 +58,8 @@ tracks/0/keys = {
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 0.5, 0.8 )
-texture = ExtResource( 2 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -66,10 +67,10 @@ shape = SubResource( 1 )
 
 [node name="TextureProgress" type="TextureProgress" parent="."]
 self_modulate = Color( 0.105882, 0.266667, 0.0862745, 1 )
-margin_left = 33.0
-margin_top = -102.0
-margin_right = 64.0
-margin_bottom = 102.0
+margin_left = 39.0
+margin_top = -140.0
+margin_right = 68.0
+margin_bottom = 141.0
 value = 50.0
 texture_progress = ExtResource( 2 )
 fill_mode = 3

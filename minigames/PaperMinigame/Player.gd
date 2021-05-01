@@ -6,7 +6,7 @@ const EPSILON := 1
 const GRAVITY := 32
 var velocity := Vector2(0, 0)
 var goes_up := false
-var deltaV := 280
+var deltaV := 220
 var jumpForce := 720
 
 func _physics_process(delta):

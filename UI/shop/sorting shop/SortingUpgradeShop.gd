@@ -10,7 +10,10 @@ func _connect():
 		item.connect("buy", self, "_on_buy")
 
 func _on_buy(item):
-	for price_type in item.price:
-		GameData.change_resource(price_type, -item.price[price_type])
+	var item_id = item.item_id
+	var price = item.price
 	
-	UpgradeManager.apply_upgrade(item.item_id)
+	for price_type in price:
+		GameData.change_resource(price_type, -price[price_type])
+	
+	UpgradeManager.apply_upgrade(item_id)

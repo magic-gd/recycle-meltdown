@@ -2,7 +2,7 @@ extends Control
 
 #
 # A shop item
-# For tiered upgrades, add another shop item as a child
+# For tiered upgrades, add another invisible shop item
 # and assign it to next_tier_item_path
 #
 
@@ -28,8 +28,8 @@ func buy():
 	emit_signal("buy", self)
 	if next_tier_item_path:
 		var next_item = get_node(next_tier_item_path)
-#		remove_child(next_item)
-		_replace_self_with(next_item)
+		if next_item:
+			_replace_self_with(next_item)
 	else:
 		queue_free()
 
@@ -39,13 +39,16 @@ func _check_tier():
 	
 	var next_item = get_node(next_tier_item_path)
 	if item_id in GameData.upgrades:
-		_replace_self_with(next_item)
+		if not next_item._check_tier():
+			_replace_self_with(next_item)
+		visible = false
+		return true
 	else:
 		next_item.visible = false
+		return false
 
 func _replace_self_with(shop_item):
-	shop_item.get_parent().remove_child(shop_item)
-	get_parent().call_deferred("add_child", shop_item)
+	if not shop_item: return
 	shop_item.visible = true
 	
 	# Keep position

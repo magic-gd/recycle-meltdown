@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/objects/trash/magazine.png" type="Texture" id=1]
 [ext_resource path="res://UI/shop/ShopItem.tscn" type="PackedScene" id=2]
 [ext_resource path="res://UI/themes/default_theme.tres" type="Theme" id=3]
 [ext_resource path="res://assets/fonts/roboto_42.tres" type="DynamicFont" id=4]
 [ext_resource path="res://UI/shop/sorting shop/SortingUpgradeShop.gd" type="Script" id=5]
+[ext_resource path="res://UI/dashboard/ResourceBar.tscn" type="PackedScene" id=6]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.552941, 0.552941, 0.564706, 1 )
@@ -71,9 +72,9 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 55.0
-margin_top = 59.9165
+margin_top = 69.9165
 margin_right = -55.0
-margin_bottom = -65.0834
+margin_bottom = -55.0834
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -95,9 +96,10 @@ description = ""
 price = {
 "dollars": 100
 }
-next_tier_item_path = NodePath("EvenMoreTrash")
+next_tier_item_path = NodePath("../EvenMoreTrash")
 
-[node name="EvenMoreTrash" parent="ShopList/ScrollContainer/ItemVBox/MoreTrash" instance=ExtResource( 2 )]
+[node name="EvenMoreTrash" parent="ShopList/ScrollContainer/ItemVBox" instance=ExtResource( 2 )]
+visible = false
 margin_top = 104.0
 margin_right = 478.0
 margin_bottom = 204.0
@@ -107,10 +109,13 @@ description = ""
 price = {
 "dollars": 500
 }
-next_tier_item_path = NodePath("LotsOfTrash")
+next_tier_item_path = NodePath("../LotsOfTrash")
 
-[node name="LotsOfTrash" parent="ShopList/ScrollContainer/ItemVBox/MoreTrash/EvenMoreTrash" instance=ExtResource( 2 )]
+[node name="LotsOfTrash" parent="ShopList/ScrollContainer/ItemVBox" instance=ExtResource( 2 )]
+visible = false
+margin_top = 104.0
 margin_right = 490.0
+margin_bottom = 204.0
 item_id = "lot_of_trash"
 item_name = "Lots Of Trash"
 description = ""
@@ -141,3 +146,5 @@ text = "Back"
 __meta__ = {
 "_edit_use_anchors_": true
 }
+
+[node name="ResourceBar" parent="." instance=ExtResource( 6 )]

@@ -4,7 +4,7 @@ signal resource_change
 signal data_change
 
 var resources = {
-	"dollars": 1000,
+	"dollars": 10000,
 	"paper": 2000,
 	"plastic": 2000,
 	"glass": 2000,

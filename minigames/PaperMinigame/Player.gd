@@ -10,12 +10,12 @@ var deltaV := 220
 var jumpForce := 720
 
 func _physics_process(delta):
-	if Input.is_action_pressed("ui_left"):
+	if Input.is_action_pressed("ui_left") or Input.is_action_pressed("move_left"):
 		velocity.x = -deltaV
-	elif Input.is_action_pressed("ui_right"):
+	elif Input.is_action_pressed("ui_right") or Input.is_action_pressed("move_right"):
 		velocity.x = deltaV
 		
-	if Input.is_action_just_pressed("ui_up") and is_on_floor():
+	if (Input.is_action_just_pressed("ui_up") or Input.is_action_just_pressed("jump")) and is_on_floor():
 		velocity.y = -jumpForce
 		goes_up = true
 		

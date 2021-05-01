@@ -16,7 +16,7 @@ var factory_output = {
 	"plastic": 0,
 	"glass": 0,
 	"metal": 0,
-	"paper_waste": 0,
+	"paper_waste": 100,
 	"plastic_waste": 0,
 	"glass_waste": 0,
 	"metal_waste": 0,

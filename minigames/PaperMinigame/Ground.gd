@@ -1,5 +1,7 @@
 extends StaticBody2D
 
+signal score(amount)
+
 const COL_SIZE := 60
 var width : float
 var cols : int
@@ -21,6 +23,7 @@ func check_row():
 		for c in cartons:
 			rem_node(c)
 		cartons.clear()
+		emit_signal("score", 10)
 			
 func rem_node(node : Node):
 	node.get_parent().remove_child(node)

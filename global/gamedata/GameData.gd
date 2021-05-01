@@ -4,10 +4,11 @@ signal resource_change
 signal data_change
 
 var resources = {
-	"paper": 0,
-	"plastic": 0,
-	"glass": 0,
-	"metal": 0,
+	"dollars": 1000,
+	"paper": 2000,
+	"plastic": 2000,
+	"glass": 2000,
+	"metal": 2000,
 }
 
 var factory_output = {
@@ -21,15 +22,14 @@ var factory_output = {
 	"metal_waste": 0,
 }
 
-var data = {
-}
+var upgrades = []
 
 var waste_spawn_table = {
 	"paper": 10.0,
 	"plastic": 10.0,
 	"glass": 8.0,
 	"metal": 5.0,
-	"hazardous": 0.5
+	"organic": 0.5,
 }
 
 func change_resource(type, amount):

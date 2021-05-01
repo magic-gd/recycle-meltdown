@@ -1,10 +1,11 @@
+tool
 extends Area2D
 
 signal score
 signal collected
 signal mistake
 
-export var collection_type = "paper"
+export var collection_type = "paper" setget set_collection_type
 export var max_fill = 5
 
 # State
@@ -16,6 +17,14 @@ func set_fill(p_fill):
 	$TextureProgress.value = fill
 	if fill >= max_fill:
 		_ship_trash()
+
+func set_collection_type(type):
+	collection_type = type
+	match collection_type:
+		"paper": $Sprite.texture = preload("res://assets/minigames/sort minigame/paper_container.png")
+		"plastic": $Sprite.texture = preload("res://assets/minigames/sort minigame/plastic_container.png")
+		"glass": $Sprite.texture = preload("res://assets/minigames/sort minigame/glass_container.png")
+		"metal": $Sprite.texture = preload("res://assets/minigames/sort minigame/metal_container.png")
 
 func _ready():
 	_connect()

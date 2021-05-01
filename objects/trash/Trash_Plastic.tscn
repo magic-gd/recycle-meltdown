@@ -13,6 +13,7 @@ extents = Vector2( 25.8704, 42.0482 )
 script = ExtResource( 2 )
 type = "plastic"
 emission = 1.5
+fuel = 1.5
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -2.38419e-07 )

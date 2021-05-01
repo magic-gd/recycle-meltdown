@@ -24,6 +24,12 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, Vector2.UP)
 	velocity.x = lerp(velocity.x, 0, 0.1)
 	
+	for i in range(get_slide_count() - 1):
+		var collider = get_slide_collision(i).collider
+		var delta_pos : Vector2 = collider.position - position
+		if collider.is_in_group("cartons"):
+			handle_carton_collision(delta_pos, collider)
+	
 
 func handle_carton_collision(v : Vector2, c : Object):
 	# The player has to push a carton with at least (1/3) of his body.

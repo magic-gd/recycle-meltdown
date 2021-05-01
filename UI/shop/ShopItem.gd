@@ -1,14 +1,23 @@
 extends Control
 
+#
+# A shop item
+# For tiered upgrades, add another shop item as a child
+# and assign it to next_tier_item_path
+#
+
 signal buy
 
+export var type = "upgrade"
 export var item_id = "id"
 export var item_name = "Item"
 export var description = "Description"
 export var price = {}
+export (NodePath) var next_tier_item_path = null
 
 func _ready():
 	_connect()
+	_check_tier()
 	_update_display()
 
 func _connect():
@@ -17,6 +26,33 @@ func _connect():
 
 func buy():
 	emit_signal("buy", self)
+	if next_tier_item_path:
+		var next_item = get_node(next_tier_item_path)
+#		remove_child(next_item)
+		_replace_self_with(next_item)
+	else:
+		queue_free()
+
+func _check_tier():
+	if not next_tier_item_path: return
+	if not get_parent() is VBoxContainer: return
+	
+	var next_item = get_node(next_tier_item_path)
+	if item_id in GameData.upgrades:
+		_replace_self_with(next_item)
+	else:
+		next_item.visible = false
+
+func _replace_self_with(shop_item):
+	shop_item.get_parent().remove_child(shop_item)
+	get_parent().call_deferred("add_child", shop_item)
+	shop_item.visible = true
+	
+	# Keep position
+	var child_pos = get_position_in_parent()
+	get_parent().call_deferred("move_child", shop_item, child_pos)
+	
+	queue_free()
 
 func _update_display():
 	$VBoxContainer/NameLabel.text = item_name

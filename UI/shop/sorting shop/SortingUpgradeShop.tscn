@@ -4,7 +4,7 @@
 [ext_resource path="res://UI/shop/ShopItem.tscn" type="PackedScene" id=2]
 [ext_resource path="res://UI/themes/default_theme.tres" type="Theme" id=3]
 [ext_resource path="res://assets/fonts/roboto_42.tres" type="DynamicFont" id=4]
-[ext_resource path="res://UI/panels/SortingUpgradePanel.gd" type="Script" id=5]
+[ext_resource path="res://UI/shop/sorting shop/SortingUpgradeShop.gd" type="Script" id=5]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.552941, 0.552941, 0.564706, 1 )
@@ -79,8 +79,8 @@ __meta__ = {
 }
 
 [node name="ItemVBox" type="VBoxContainer" parent="ShopList/ScrollContainer"]
-margin_right = 478.0
-margin_bottom = 412.0
+margin_right = 490.0
+margin_bottom = 387.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
@@ -88,15 +88,16 @@ __meta__ = {
 }
 
 [node name="MoreTrash" parent="ShopList/ScrollContainer/ItemVBox" instance=ExtResource( 2 )]
-margin_right = 478.0
+margin_right = 490.0
 item_id = "more_trash"
 item_name = "More Trash"
 description = ""
 price = {
 "dollars": 100
 }
+next_tier_item_path = NodePath("EvenMoreTrash")
 
-[node name="EvenMoreTrash" parent="ShopList/ScrollContainer/ItemVBox" instance=ExtResource( 2 )]
+[node name="EvenMoreTrash" parent="ShopList/ScrollContainer/ItemVBox/MoreTrash" instance=ExtResource( 2 )]
 margin_top = 104.0
 margin_right = 478.0
 margin_bottom = 204.0
@@ -106,11 +107,10 @@ description = ""
 price = {
 "dollars": 500
 }
+next_tier_item_path = NodePath("LotsOfTrash")
 
-[node name="LotsOfTrash" parent="ShopList/ScrollContainer/ItemVBox" instance=ExtResource( 2 )]
-margin_top = 208.0
-margin_right = 478.0
-margin_bottom = 308.0
+[node name="LotsOfTrash" parent="ShopList/ScrollContainer/ItemVBox/MoreTrash/EvenMoreTrash" instance=ExtResource( 2 )]
+margin_right = 490.0
 item_id = "lot_of_trash"
 item_name = "Lots Of Trash"
 description = ""
@@ -119,9 +119,9 @@ price = {
 }
 
 [node name="SolarCells" parent="ShopList/ScrollContainer/ItemVBox" instance=ExtResource( 2 )]
-margin_top = 312.0
-margin_right = 478.0
-margin_bottom = 412.0
+margin_top = 104.0
+margin_right = 490.0
+margin_bottom = 204.0
 item_id = "sorting_solar"
 item_name = "Install Solar Cells"
 description = "More energy with no extra emissions!"

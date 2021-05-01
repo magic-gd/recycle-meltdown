@@ -27,10 +27,8 @@ func spawn_carton(col : int):
 	new_carton.position.y = -offset
 	elapsed_time = 0
 	decrease_spawn_timeout()
-	new_carton.add_to_group("cartons")
 	add_child(new_carton)
 
 func decrease_spawn_timeout(scale : float = 0.02, minimum : float = 1):
 	var decrease = log(carton_spawn_timeout + 1) * scale
 	carton_spawn_timeout = max(carton_spawn_timeout - decrease, minimum)
-	print(carton_spawn_timeout)

@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
-const FALLING_VELOCITY := 100
-const PUSH_VELOCITY := 120
+const FALLING_VELOCITY := 180
+const PUSH_VELOCITY := 100
 const MOVE_DIST := 60
 const EPSILON := 1
 var velocity := Vector2(0, 0)

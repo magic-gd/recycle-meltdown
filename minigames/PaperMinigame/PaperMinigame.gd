@@ -29,6 +29,6 @@ func spawn_carton(col : int):
 	decrease_spawn_timeout()
 	add_child(new_carton)
 
-func decrease_spawn_timeout(scale : float = 0.02, minimum : float = 1):
+func decrease_spawn_timeout(scale : float = 0.05, minimum : float = 0.8):
 	var decrease = log(carton_spawn_timeout + 1) * scale
 	carton_spawn_timeout = max(carton_spawn_timeout - decrease, minimum)

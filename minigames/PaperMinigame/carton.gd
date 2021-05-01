@@ -27,8 +27,8 @@ func _process(delta):
 		
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
-	if gets_pushed and velocity.x == 0:
-		position.x = enforce_grid(initial_pos.x, true)
+	if gets_pushed and abs(velocity.x) <= EPSILON:
+		position.x = enforce_grid(position.x, true)
 		gets_pushed = false
 		push_direction = 0
 	

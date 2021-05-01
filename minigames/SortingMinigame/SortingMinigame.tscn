@@ -16,6 +16,9 @@ default_font = ExtResource( 9 )
 
 [node name="SortingMinigame" type="Node2D"]
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 349.583 ]
+}
 
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( 0, 329.172 )
@@ -30,22 +33,18 @@ z_index = 1
 [node name="CollectionAreas" type="Node2D" parent="."]
 
 [node name="PaperCollectionArea" parent="CollectionAreas" instance=ExtResource( 5 )]
-modulate = Color( 0.788235, 0.768627, 0.768627, 1 )
-position = Vector2( 77.396, 453.052 )
+position = Vector2( 75.396, 495.578 )
 
 [node name="PlasticCollectionArea2" parent="CollectionAreas" instance=ExtResource( 5 )]
-modulate = Color( 0.678431, 0.768627, 0.423529, 1 )
-position = Vector2( 79.2353, 813.188 )
+position = Vector2( 75.396, 836.588 )
 collection_type = "plastic"
 
 [node name="GlassCollectionArea3" parent="CollectionAreas" instance=ExtResource( 5 )]
-modulate = Color( 0.517647, 0.898039, 0.615686, 1 )
-position = Vector2( 509.797, 449.052 )
+position = Vector2( 520.476, 495.578 )
 collection_type = "glass"
 
 [node name="MetalCollectionArea4" parent="CollectionAreas" instance=ExtResource( 5 )]
-modulate = Color( 0.572549, 0.568627, 0.568627, 1 )
-position = Vector2( 506.705, 825.323 )
+position = Vector2( 520.476, 836.588 )
 collection_type = "metal"
 
 [node name="Incinerator" parent="." instance=ExtResource( 6 )]
@@ -55,13 +54,13 @@ scale = Vector2( 0.5, 0.5 )
 [node name="SpawnPoints" type="Node" parent="."]
 
 [node name="TrashSpawn1" type="Position2D" parent="SpawnPoints"]
-position = Vector2( 216.793, 1041.99 )
+position = Vector2( 223.793, 1041.99 )
 
 [node name="TrashSpawn2" type="Position2D" parent="SpawnPoints"]
 position = Vector2( 294.902, 1066.02 )
 
 [node name="TrashSpawn3" type="Position2D" parent="SpawnPoints"]
-position = Vector2( 365.661, 1041.99 )
+position = Vector2( 358.661, 1041.99 )
 
 [node name="SpawnTimer" type="Timer" parent="."]
 

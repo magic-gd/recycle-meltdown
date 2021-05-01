@@ -7,8 +7,9 @@ export var base_speed = 100
 export var base_spawn_rate = 2.0
 export var speedup_on = 5
 export var energy_usage = 5.0
-export var max_emissions = 20
+export var max_emissions = 20000
 export var max_energy = 1000.0
+export var fuel_efficiency = 100
 
 var spawn_table
 var spawn_table_total_weight
@@ -172,7 +173,7 @@ func _reset_speed():
 func _on_burned(item):
 	print("burned %s" % item.emission)
 	# Add energy
-	set_energy(energy + item.fuel * 100)
+	set_energy(energy + item.fuel * fuel_efficiency)
 	set_emissions(emissions + item.emission)
 	if item.type != "waste":
 		_reset_speed()
@@ -199,6 +200,6 @@ func _get_trash_item():
 		"plastic": trash_item = preload("res://objects/trash/Trash_Plastic.tscn").instance()
 		"glass": trash_item = preload("res://objects/trash/Trash_Glass.tscn").instance()
 		"metal": trash_item = preload("res://objects/trash/Trash_Metal.tscn").instance()
-		"hazardous": trash_item = preload("res://objects/trash/Trash_Hazardous.tscn").instance()
+		"organic": trash_item = preload("res://objects/trash/Trash_Organic.tscn").instance()
 	
 	return trash_item

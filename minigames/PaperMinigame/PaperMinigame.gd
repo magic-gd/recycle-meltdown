@@ -5,12 +5,12 @@ var elapsed_time = 0 # time since the last carton spawn
 var carton_spawn_timeout = 5 # seconds
 var width
 var cols
-var box_width = 60
+const BOX_WIDTH = 60
 
 func _ready():
 	carton_scene = load("res://minigames/PaperMinigame/carton.tscn")
 	width = get_viewport().size.x
-	cols = int(floor(width / box_width))
+	cols = int(floor(width / BOX_WIDTH))
 	randomize()
 
 func _process(delta):
@@ -21,8 +21,8 @@ func _process(delta):
 
 func spawn_carton(col):
 	var new_carton = carton_scene.instance()
-	var offset = box_width / 2
-	new_carton.position.x = (col * box_width) + offset
+	var offset = BOX_WIDTH / 2
+	new_carton.position.x = (col * BOX_WIDTH) + offset
 	new_carton.position.y = offset
 	elapsed_time = 0
 	new_carton.add_to_group("cartons")

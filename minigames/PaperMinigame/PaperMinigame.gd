@@ -11,6 +11,7 @@ func _ready():
 	carton_scene = load("res://minigames/PaperMinigame/carton.tscn")
 	width = get_viewport().size.x
 	cols = int(floor(width / box_width))
+	randomize()
 
 func _process(delta):
 	elapsed_time += delta

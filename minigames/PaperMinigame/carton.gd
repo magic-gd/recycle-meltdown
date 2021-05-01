@@ -27,12 +27,21 @@ func _process(delta):
 		
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
-	if gets_pushed and abs(velocity.x) <= EPSILON:
+	if abs(velocity.x) <= EPSILON:
 		position.x = enforce_grid(position.x, true)
 		gets_pushed = false
 		push_direction = 0
 	
-func move(direction):
+	for i in range(get_slide_count() - 1):
+		var collider = get_slide_collision(i).collider
+		var delta_pos : Vector2 = collider.position - position
+		if collider.is_in_group("player"):
+			if abs(delta_pos.x) <= MOVE_DIST - 2 * EPSILON and delta_pos.y > 0:
+				collider.die()
+			else:
+				print("x:"+str(delta_pos.x)+" y:"+str(delta_pos.y))
+	
+func push(direction):
 	if gets_pushed: return
 	
 	initial_pos = position

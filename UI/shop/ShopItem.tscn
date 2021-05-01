@@ -42,7 +42,7 @@ __meta__ = {
 }
 
 [node name="NameLabel" type="Label" parent="VBoxContainer"]
-margin_right = 431.0
+margin_right = 430.0
 margin_bottom = 29.0
 text = "Item Name"
 clip_text = true
@@ -52,7 +52,7 @@ __meta__ = {
 
 [node name="DescriptionLabel" type="Label" parent="VBoxContainer"]
 margin_top = 33.0
-margin_right = 431.0
+margin_right = 430.0
 margin_bottom = 57.0
 custom_fonts/font = ExtResource( 3 )
 text = "Description"
@@ -63,7 +63,7 @@ __meta__ = {
 
 [node name="PriceLabel" type="Label" parent="VBoxContainer"]
 margin_top = 61.0
-margin_right = 431.0
+margin_right = 430.0
 margin_bottom = 85.0
 custom_fonts/font = ExtResource( 3 )
 text = "Price"

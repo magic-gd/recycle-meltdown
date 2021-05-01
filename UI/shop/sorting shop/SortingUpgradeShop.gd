@@ -14,4 +14,3 @@ func _on_buy(item):
 		GameData.change_resource(price_type, -item.price[price_type])
 	
 	UpgradeManager.apply_upgrade(item.item_id)
-	item.queue_free()

@@ -24,5 +24,5 @@ func _physics_process(delta):
 	
 	for i in range(get_slide_count() - 1):
 		var collision = get_slide_collision(i)
-		if "carton" in collision.collider.name:
+		if collision.collider.is_in_group("cartons"):
 			collision.collider.move(direction)

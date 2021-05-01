@@ -24,4 +24,5 @@ func spawn_carton(col):
 	new_carton.position.x = (col * box_width) + offset
 	new_carton.position.y = offset
 	elapsed_time = 0
+	new_carton.add_to_group("cartons")
 	add_child(new_carton)

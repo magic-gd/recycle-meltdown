@@ -13,7 +13,6 @@ var game_manager
 func _process(delta):
 	if is_on_floor():
 		velocity.y = 0
-		check_fullness()
 	else:
 		velocity.y = FALLING_VELOCITY
 	
@@ -51,10 +50,6 @@ func enforce_grid(x_pos : float, include_offset : bool) -> float:
 		return clean_pos + offset
 	else:
 		return clean_pos
-	
-func check_fullness():
-	if position.y < MOVE_DIST:
-		game_manager.game_over("Oh no, looks like we have a blockage here.")
 
 func diff(a : float, b : float) -> float:
 	if a > b: return a - b

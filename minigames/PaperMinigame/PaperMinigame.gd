@@ -36,6 +36,7 @@ func set_paper_input(duration_till_repeat : float = 20):
 
 func _connect():
 	$UI/MenuButton.connect("exit", SceneManager, "goto_main")
+	$TopCartonDetector.connect("body_entered", self, "_on_top_carton_detector")
 
 func _process(delta):
 	elapsed_time += delta
@@ -86,6 +87,10 @@ func _check_row_full():
 		for carton in bottom_row_cartons:
 			carton.queue_free()
 		score(100)
+
+func _on_top_carton_detector(body):
+	if not body.is_in_group("cartons"): return
+	game_over("Oh no, looks like we have a blockage here.")
 
 func _apply_upgrades():
 	if "paper_double_jump" in GameData.upgrades:

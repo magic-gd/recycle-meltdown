@@ -1,0 +1,77 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/UI/icons/resource icons/question_mark_icon.png" type="Texture" id=1]
+[ext_resource path="res://assets/fonts/roboto_24.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/fonts/roboto_32.tres" type="DynamicFont" id=3]
+[ext_resource path="res://UI/components/Help.gd" type="Script" id=4]
+
+[node name="Help" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+pause_mode = 2
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -33.5946
+margin_top = 1.05946
+margin_right = 35.4054
+margin_bottom = 63.0595
+icon = ExtResource( 1 )
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InfoText" type="Panel" parent="."]
+visible = false
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+margin_left = 0.199997
+margin_top = 0.135986
+margin_right = 0.199951
+margin_bottom = -0.288025
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Continue" type="Button" parent="InfoText"]
+pause_mode = 2
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -115.0
+margin_top = -111.706
+margin_right = 109.0
+margin_bottom = -37.7056
+custom_fonts/font = ExtResource( 3 )
+text = "Got it"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="RichTextLabel" parent="InfoText"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 57.0
+margin_top = 67.0
+margin_right = -39.9999
+margin_bottom = -176.776
+custom_fonts/normal_font = ExtResource( 2 )
+text = "All the paper waste from the sorting machine is unloaded here.
+
+You have to equally distribute the paper, only then a layer of paper can get processed by the recycling machine.
+
+Try to prevent a blockage that occurs when the room is filled up with paper. 
+And watch out to not get hit by the falling waste!
+"
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="InfoText/Continue" to="." method="_on_Continue_pressed"]

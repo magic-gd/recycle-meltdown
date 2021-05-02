@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://assets/minigames/PaperMinigame/trash.png" type="Texture" id=1]
+[ext_resource path="res://assets/minigames/PaperMinigame/paper.png" type="Texture" id=1]
 [ext_resource path="res://minigames/PaperMinigame/carton.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -12,13 +12,15 @@ extents = Vector2( 30, 30 )
 [node name="carton" type="KinematicBody2D" groups=[
 "cartons",
 ]]
+position = Vector2( 0, -0.8909 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 0.4, 0.4 )
+position = Vector2( 0, -1 )
+scale = Vector2( 0.177, 0.219 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

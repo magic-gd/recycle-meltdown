@@ -1,5 +1,7 @@
 extends Node2D
 
+export var carton_image_path = "res://assets/UI/icons/trash icons/paper_trash_icon.png"
+
 const BOX_WIDTH := 60
 const ROW_SIZE = 10
 
@@ -66,6 +68,7 @@ func _on_Player_game_over():
 func spawn_carton(col : int):
 	if not spawn_enabled: return
 	var new_carton = carton_scene.instance()
+	new_carton.get_node("Sprite").texture = load(carton_image_path)
 	var offset = BOX_WIDTH / 2
 	new_carton.position.x = (col * BOX_WIDTH) + offset
 	new_carton.position.y = -offset

@@ -1,6 +1,6 @@
 extends Control
 
-export var upgrade_shop_path = "res://UI/shop/sorting shop/PaperUpgradeShop.tscn"
+export var upgrade_shop_path = "res://UI/shop/sorting shop/GlassUpgradeShop.tscn"
 
 func _ready():
 	_connect()
@@ -12,11 +12,12 @@ func _connect():
 	$VBoxContainer/UpgradesButton.connect("pressed", self, "goto_upgrades")
 
 func goto_minigame():
+	return
 	get_tree().change_scene("res://minigames/PaperMinigame/PaperMinigame.tscn")
 
 func goto_upgrades():
 	get_tree().change_scene(upgrade_shop_path)
 
 func _update_resource_panel():
-	$VBoxContainer/PaperPanel/HBoxContainer/Label.text = str(GameData.resources["paper"])
-	$VBoxContainer/PaperWastePanel/HBoxContainer/Label.text = "%s / minute" % str(GameData.factory_output["paper_waste"])
+	$VBoxContainer/ResourcePanel/HBoxContainer/Label.text = str(GameData.resources["glass"])
+	$VBoxContainer/WastePanel/HBoxContainer/Label.text = "%s / minute" % str(GameData.factory_output["glass_waste"])

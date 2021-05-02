@@ -27,10 +27,10 @@ __meta__ = {
 
 [node name="PaperButton" type="TextureButton" parent="UI"]
 self_modulate = Color( 0.866667, 0.937255, 0.737255, 1 )
-anchor_left = 0.684469
-anchor_top = 0.0933955
-anchor_right = 0.849469
-anchor_bottom = 0.199841
+anchor_left = 0.677798
+anchor_top = 0.134443
+anchor_right = 0.861131
+anchor_bottom = 0.25456
 margin_left = 1.52588e-05
 texture_normal = ExtResource( 4 )
 expand = true
@@ -40,10 +40,10 @@ __meta__ = {
 
 [node name="GlassButton" type="TextureButton" parent="UI"]
 self_modulate = Color( 0.254902, 0.709804, 0.8, 1 )
-anchor_left = 0.151901
-anchor_top = 0.0827947
-anchor_right = 0.316901
-anchor_bottom = 0.18924
+anchor_left = 0.20951
+anchor_top = 0.571792
+anchor_right = 0.307843
+anchor_bottom = 0.635269
 margin_left = 1.52588e-05
 texture_normal = ExtResource( 4 )
 expand = true
@@ -53,10 +53,10 @@ __meta__ = {
 
 [node name="MetalButton" type="TextureButton" parent="UI"]
 self_modulate = Color( 0.458824, 0.45098, 0.45098, 1 )
-anchor_left = 0.234552
-anchor_top = 0.587333
-anchor_right = 0.399551
-anchor_bottom = 0.693778
+anchor_left = 0.424102
+anchor_top = 0.570251
+anchor_right = 0.530769
+anchor_bottom = 0.639587
 margin_left = 1.52588e-05
 texture_normal = ExtResource( 4 )
 expand = true
@@ -66,10 +66,10 @@ __meta__ = {
 
 [node name="PlasticButton" type="TextureButton" parent="UI"]
 self_modulate = Color( 0.552941, 0.541176, 0.227451, 1 )
-anchor_left = 0.717568
-anchor_top = 0.585278
-anchor_right = 0.882568
-anchor_bottom = 0.691724
+anchor_left = 0.66049
+anchor_top = 0.575456
+anchor_right = 0.752157
+anchor_bottom = 0.635026
 margin_left = 1.52588e-05
 texture_normal = ExtResource( 4 )
 expand = true

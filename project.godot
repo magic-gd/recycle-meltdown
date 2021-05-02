@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="recycle"
-run/main_scene="res://screens/main/MainScreen.tscn"
+run/main_scene="res://screens/StartScreen.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -31,6 +31,7 @@ SceneManager="*res://global/SceneManager.tscn"
 UpgradeManager="*res://global/UpgradeManager.gd"
 GameOptions="*res://global/GameOptions.tscn"
 SoundEffectPlayer="*res://global/SoundEffectPlayer.tscn"
+SaveManager="*res://global/SaveManager.tscn"
 
 [display]
 

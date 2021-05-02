@@ -2,6 +2,9 @@ extends Control
 
 export var sorting_panel_path = "res://UI/panels/SortingFactoryInfoPanel.tscn"
 export var paper_panel_path = "res://UI/panels/PaperFactoryInfoPanel.tscn"
+export var plastic_panel_path = "res://UI/panels/PlasticFactoryInfoPanel.tscn"
+export var glass_panel_path = "res://UI/panels/GlassFactoryInfoPanel.tscn"
+export var metal_panel_path = "res://UI/panels/MetalFactoryInfoPanel.tscn"
 
 
 onready var info_panel = $UI/InfoPanel
@@ -11,6 +14,7 @@ func _ready():
 	get_tree().paused = false
 	_connect()
 	info_panel.visible = false
+	SaveManager.save()
 
 func _connect():
 	$UI/SortingButton.connect("pressed", self, "_on_factory_pressed", ["sorting"])
@@ -50,3 +54,6 @@ func _on_factory_pressed(type):
 	match type:
 		"sorting": _show_info_panel(sorting_panel_path)
 		"paper": _show_info_panel(paper_panel_path)
+		"plastic": _show_info_panel(plastic_panel_path)
+		"glass": _show_info_panel(glass_panel_path)
+		"metal": _show_info_panel(metal_panel_path)

@@ -1,4 +1,4 @@
-tool
+#tool
 extends Control
 
 export var resource_type = "dollars" setget set_resource_type

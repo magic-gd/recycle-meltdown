@@ -10,7 +10,7 @@
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.552941, 0.552941, 0.564706, 1 )
 
-[node name="SortingUpgradeShop" type="Control"]
+[node name="PaperUpgradeShop" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 3 )
@@ -18,6 +18,8 @@ script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+greeting = "Nice day ain't it?"
+buy_reaction = "Pleasure doing business!"
 
 [node name="BG" type="Panel" parent="."]
 anchor_right = 1.0
@@ -90,50 +92,11 @@ __meta__ = {
 
 [node name="MoreTrash" parent="ShopList/ScrollContainer/ItemVBox" instance=ExtResource( 2 )]
 margin_right = 490.0
-item_id = "more_trash"
-item_name = "More Trash"
-description = ""
-price = {
-"dollars": 100
-}
-next_tier_item_path = NodePath("../EvenMoreTrash")
-
-[node name="EvenMoreTrash" parent="ShopList/ScrollContainer/ItemVBox" instance=ExtResource( 2 )]
-visible = false
-margin_top = 104.0
-margin_right = 478.0
-margin_bottom = 204.0
-item_id = "even_more_trash"
-item_name = "Even More Trash"
-description = ""
+item_id = "paper_double_jump"
+item_name = "Double Jump"
+description = "Hire only the best jumpers"
 price = {
 "dollars": 500
-}
-next_tier_item_path = NodePath("../LotsOfTrash")
-
-[node name="LotsOfTrash" parent="ShopList/ScrollContainer/ItemVBox" instance=ExtResource( 2 )]
-visible = false
-margin_top = 104.0
-margin_right = 490.0
-margin_bottom = 204.0
-item_id = "lot_of_trash"
-item_name = "Lots Of Trash"
-description = ""
-price = {
-"dollars": 1000
-}
-
-[node name="SolarCells" parent="ShopList/ScrollContainer/ItemVBox" instance=ExtResource( 2 )]
-margin_top = 104.0
-margin_right = 490.0
-margin_bottom = 204.0
-item_id = "sorting_solar"
-item_name = "Install Solar Cells"
-description = "More energy with no extra emissions!"
-price = {
-"dollars": 1000,
-"glass": 100,
-"metal": 50
 }
 
 [node name="BackButton" type="Button" parent="."]

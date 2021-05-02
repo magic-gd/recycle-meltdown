@@ -2,10 +2,10 @@
 
 [ext_resource path="res://assets/fonts/roboto_20.tres" type="DynamicFont" id=1]
 [ext_resource path="res://UI/dashboard/MaterialList.gd" type="Script" id=2]
-[ext_resource path="res://assets/temp/paper_icon.png" type="Texture" id=3]
-[ext_resource path="res://assets/temp/metal_icon.png" type="Texture" id=4]
-[ext_resource path="res://assets/temp/glass_icon.png" type="Texture" id=5]
-[ext_resource path="res://assets/temp/plastic_icon.png" type="Texture" id=6]
+[ext_resource path="res://assets/UI/icons/resource icons/glass_icon.png" type="Texture" id=3]
+[ext_resource path="res://assets/UI/icons/resource icons/plastic_icon.png" type="Texture" id=4]
+[ext_resource path="res://assets/UI/icons/resource icons/metal_icon.png" type="Texture" id=5]
+[ext_resource path="res://assets/UI/icons/resource icons/paper_icon.png" type="Texture" id=6]
 
 [node name="MaterialList" type="Control"]
 anchor_right = 0.543333
@@ -132,7 +132,7 @@ margin_bottom = 71.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.75
-texture = ExtResource( 3 )
+texture = ExtResource( 6 )
 expand = true
 stretch_mode = 5
 __meta__ = {
@@ -174,7 +174,7 @@ margin_bottom = 71.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.75
-texture = ExtResource( 6 )
+texture = ExtResource( 4 )
 expand = true
 stretch_mode = 5
 __meta__ = {
@@ -216,7 +216,7 @@ margin_bottom = 71.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.75
-texture = ExtResource( 5 )
+texture = ExtResource( 3 )
 expand = true
 stretch_mode = 5
 __meta__ = {
@@ -258,7 +258,7 @@ margin_bottom = 71.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.75
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 expand = true
 stretch_mode = 5
 __meta__ = {

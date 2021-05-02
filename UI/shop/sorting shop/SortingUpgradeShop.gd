@@ -1,7 +1,11 @@
 extends Control
 
+export var greeting = "How's it going?"
+export var buy_reaction = "Excellent choice!"
+
 func _ready():
 	_connect()
+	$Shopkeep/Label.text = greeting
 
 func _connect():
 	$BackButton.connect("pressed", SceneManager, "goto_main")
@@ -17,3 +21,5 @@ func _on_buy(item):
 		GameData.change_resource(price_type, -price[price_type])
 	
 	UpgradeManager.apply_upgrade(item_id)
+	$Shopkeep/Label.text = buy_reaction
+	

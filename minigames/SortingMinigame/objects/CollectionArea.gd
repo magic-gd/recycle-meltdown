@@ -97,10 +97,7 @@ func play_collect_sound(item):
 	
 	if not sounds: return
 	var sound = sounds[randi() % sounds.size()]
-	$AudioStreamPlayer.stream = load(sound)
-	$AudioStreamPlayer.volume_db *= GameOptions.sound_volume
-	if GameOptions.sound_volume > 0:
-		$AudioStreamPlayer.play()
+	SoundEffectPlayer.play(sound)
 
 func _ship_trash():
 	get_tree().paused = true

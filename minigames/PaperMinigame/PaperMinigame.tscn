@@ -104,35 +104,35 @@ __meta__ = {
 
 [node name="Spacer" type="Control" parent="CanvasLayer/Top"]
 margin_right = 116.0
-margin_bottom = 50.0
+margin_bottom = 49.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Spacer2" type="Control" parent="CanvasLayer/Top"]
 margin_left = 120.0
 margin_right = 237.0
-margin_bottom = 50.0
+margin_bottom = 49.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Spacer3" type="Control" parent="CanvasLayer/Top"]
 margin_left = 241.0
 margin_right = 358.0
-margin_bottom = 50.0
+margin_bottom = 49.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Spacer4" type="Control" parent="CanvasLayer/Top"]
 margin_left = 362.0
 margin_right = 479.0
-margin_bottom = 50.0
+margin_bottom = 49.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Spacer5" type="Control" parent="CanvasLayer/Top"]
 margin_left = 483.0
 margin_right = 600.0
-margin_bottom = 50.0
+margin_bottom = 49.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 

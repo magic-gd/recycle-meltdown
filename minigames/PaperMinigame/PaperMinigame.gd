@@ -9,6 +9,7 @@ const BOX_WIDTH = 60
 
 func _ready():
 	_connect()
+	_apply_upgrades()
 	if float(GameData.factory_output["paper_waste"]) > 0.001:
 		carton_spawn_timeout = 20 / float(GameData.factory_output["paper_waste"])
 	carton_scene = load("res://minigames/PaperMinigame/carton.tscn")
@@ -43,3 +44,7 @@ func spawn_carton(col : int):
 func decrease_spawn_timeout(scale : float = 0.05, minimum : float = 0.8):
 	var decrease = log(carton_spawn_timeout + 1) * scale
 	carton_spawn_timeout = max(carton_spawn_timeout - decrease, minimum)
+
+func _apply_upgrades():
+	if "paper_double_jump" in GameData.upgrades:
+			$Player.max_air_jumps += 1

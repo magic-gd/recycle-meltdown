@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://assets/minigames/PaperMinigame/portrait.png" type="Texture" id=1]
+[ext_resource path="res://assets/portraits/tiffany.png" type="Texture" id=1]
 [ext_resource path="res://UI/shop/ShopItem.tscn" type="PackedScene" id=2]
 [ext_resource path="res://UI/themes/default_theme.tres" type="Theme" id=3]
 [ext_resource path="res://assets/fonts/roboto_42.tres" type="DynamicFont" id=4]
@@ -25,47 +25,6 @@ buy_reaction = "Pleasure doing business!"
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_styles/panel = SubResource( 1 )
-
-[node name="Shopkeep" type="Control" parent="."]
-margin_top = 500.0
-margin_right = 600.0
-margin_bottom = 1024.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Panel" type="Panel" parent="Shopkeep"]
-margin_top = 226.0
-margin_right = 600.0
-margin_bottom = 524.0
-
-[node name="Avatar" type="TextureRect" parent="Shopkeep"]
-anchor_left = 0.005
-anchor_top = -0.137
-anchor_right = 0.005
-anchor_bottom = -0.137
-margin_left = -15.0
-margin_top = 0.788002
-margin_right = 306.0
-margin_bottom = 395.788
-texture = ExtResource( 1 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="Shopkeep"]
-margin_top = 303.0
-margin_right = 600.0
-margin_bottom = 475.0
-custom_fonts/font = ExtResource( 4 )
-text = "How's it going?"
-align = 1
-valign = 1
-clip_text = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ShopList" type="Control" parent="."]
 anchor_right = 1.0
@@ -94,13 +53,55 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MoreTrash" parent="ShopList/ScrollContainer/ItemVBox" instance=ExtResource( 2 )]
+[node name="DoubleJump" parent="ShopList/ScrollContainer/ItemVBox" instance=ExtResource( 2 )]
 margin_right = 490.0
 item_id = "paper_double_jump"
 item_name = "Double Jump"
 description = "Hire only the best jumpers"
 price = {
 "dollars": 500
+}
+
+[node name="Shopkeep" type="Control" parent="."]
+margin_top = 500.0
+margin_right = 600.0
+margin_bottom = 1024.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Shopkeep"]
+margin_top = 226.0
+margin_right = 600.0
+margin_bottom = 524.0
+
+[node name="Avatar" type="TextureRect" parent="Shopkeep"]
+anchor_left = 0.005
+anchor_top = -0.137
+anchor_right = 0.005
+anchor_bottom = -0.137
+margin_left = -3.0
+margin_top = -30.212
+margin_right = 326.0
+margin_bottom = 298.788
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Shopkeep"]
+margin_top = 303.0
+margin_right = 600.0
+margin_bottom = 475.0
+custom_fonts/font = ExtResource( 4 )
+text = "How's it going?"
+align = 1
+valign = 1
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
 }
 
 [node name="BackButton" type="Button" parent="."]

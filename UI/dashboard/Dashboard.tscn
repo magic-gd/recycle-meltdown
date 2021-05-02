@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://UI/dashboard/MaterialList.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UI/dashboard/ResourceDisplay.tscn" type="PackedScene" id=2]
+[ext_resource path="res://UI/dashboard/dashboard_theme.tres" type="Theme" id=3]
 
 [node name="Dashboard" type="Control"]
 anchor_left = -0.00583333
 anchor_right = 0.994167
 anchor_bottom = 0.299805
+theme = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": true
 }
@@ -23,3 +25,14 @@ anchor_left = 0.0683333
 anchor_top = 0.335505
 anchor_right = 0.251667
 anchor_bottom = 0.504885
+
+[node name="QuestLabel" type="Label" parent="."]
+margin_right = 600.0
+margin_bottom = 57.0
+text = "Head to the sorting factory to set the rate of production"
+align = 1
+valign = 1
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

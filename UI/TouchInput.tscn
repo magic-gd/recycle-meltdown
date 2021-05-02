@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://UI/TouchInput.gd" type="Script" id=1]
 [ext_resource path="res://assets/temp/arrow.png" type="Texture" id=2]
+[ext_resource path="res://assets/temp/arrow_pressed.png" type="Texture" id=3]
 
 [node name="TouchInput" type="Control"]
 anchor_right = 1.0
@@ -19,43 +20,28 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="RightButton" type="TextureButton" parent="."]
-margin_left = 353.99
-margin_top = 877.039
-margin_right = 445.99
-margin_bottom = 969.039
-texture_normal = ExtResource( 2 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="RightButton" type="TouchScreenButton" parent="."]
+position = Vector2( 324.633, 883.315 )
+scale = Vector2( 0.5, 0.5 )
+normal = ExtResource( 2 )
+pressed = ExtResource( 3 )
+passby_press = true
+visibility_mode = 1
 
-[node name="LeftButton" type="TextureButton" parent="."]
-margin_left = 261.128
-margin_top = 871.483
-margin_right = 353.128
-margin_bottom = 963.483
-rect_scale = Vector2( -1, 1 )
-texture_normal = ExtResource( 2 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="LeftButton" type="TouchScreenButton" parent="."]
+position = Vector2( 270.691, 1010.4 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+normal = ExtResource( 2 )
+pressed = ExtResource( 3 )
+passby_press = true
+visibility_mode = 1
 
-[node name="JumpButton" type="TextureButton" parent="."]
-margin_left = 265.096
-margin_top = 917.518
-margin_right = 357.096
-margin_bottom = 1009.52
-rect_rotation = -90.0
-texture_normal = ExtResource( 2 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[connection signal="button_down" from="RightButton" to="." method="_on_RightButton_button_down"]
-[connection signal="button_up" from="RightButton" to="." method="_on_RightButton_button_up"]
-[connection signal="button_down" from="LeftButton" to="." method="_on_LeftButton_button_down"]
-[connection signal="button_up" from="LeftButton" to="." method="_on_LeftButton_button_up"]
-[connection signal="button_down" from="JumpButton" to="." method="_on_JumpButton_button_down"]
+[node name="JumpButton" type="TouchScreenButton" parent="."]
+position = Vector2( 234.711, 947.043 )
+rotation = -1.5708
+scale = Vector2( 0.5, 0.5 )
+normal = ExtResource( 2 )
+pressed = ExtResource( 3 )
+passby_press = true
+visibility_mode = 1

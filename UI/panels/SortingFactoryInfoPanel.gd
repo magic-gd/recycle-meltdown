@@ -11,7 +11,7 @@ func _connect():
 	$VBoxContainer/UpgradesButton.connect("pressed", self, "goto_upgrades")
 
 func goto_factory():
-	get_tree().change_scene("res://screens/SortingFactoryScreen.tscn")
+	get_tree().change_scene("res://minigames/SortingMinigame/SortingMinigame.tscn")
 
 func goto_upgrades():
 	get_tree().change_scene(upgrade_shop_path)

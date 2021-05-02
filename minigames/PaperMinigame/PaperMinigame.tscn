@@ -115,6 +115,13 @@ position = Vector2( 307.89, 784 )
 position = Vector2( -8.59888, 0 )
 shape = SubResource( 5 )
 
+[node name="TopCartonDetector" type="Area2D" parent="."]
+position = Vector2( 308.456, -86.6208 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopCartonDetector"]
+position = Vector2( -8.59888, 0 )
+shape = SubResource( 5 )
+
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="NoPaperInfoText" type="Label" parent="UI"]
@@ -189,6 +196,10 @@ resource_type = "paper"
 
 [node name="GameOver" parent="UI" instance=ExtResource( 10 )]
 visible = false
+
+[node name="DebugCam" type="Camera2D" parent="."]
+position = Vector2( 297.205, 360.299 )
+current = true
 
 [connection signal="area_entered" from="Ground/GroundArea" to="Ground" method="_on_GroundArea_area_entered"]
 [connection signal="game_over" from="Player" to="." method="_on_Player_game_over"]

@@ -74,6 +74,7 @@ func _ready():
 	set_energy(max_energy)
 	
 	spawn_timer.start()
+	_show_tutorial()
 
 func _process(delta):
 	set_energy(energy - energy_usage * delta * 10)
@@ -179,10 +180,15 @@ func _on_burned(item):
 		_reset_speed()
 
 func _update_score_display():
-	$UI/ScoreDisplay/PaperScoreLabel.text = "Paper: %s" % score["paper"]
-	$UI/ScoreDisplay/PlasticScoreLabel.text = "Plastic: %s" % score["plastic"]
-	$UI/ScoreDisplay/GlassScoreLabel.text = "Glass: %s" % score["glass"]
-	$UI/ScoreDisplay/MetalScoreLabel.text = "Metal: %s" % score["metal"]
+	$UI/ScoreDisplay/PaperScore/PaperScoreLabel.text = str(score["paper"])
+	$UI/ScoreDisplay/PlasticScore/PlasticScoreLabel.text = str(score["plastic"])
+	$UI/ScoreDisplay/GlassScoreDisplay/GlassScoreLabel.text = str(score["glass"])
+	$UI/ScoreDisplay/MetalScoreDisplay/MetalScoreLabel.text = str(score["metal"])
+
+func _show_tutorial():
+	if "sorting_tut" in GameData.state: return
+	# TODO
+	GameData.state["sorting_tut"] = 1
 
 func _get_trash_item():
 	var trash_item = null

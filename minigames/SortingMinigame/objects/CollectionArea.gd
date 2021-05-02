@@ -45,18 +45,19 @@ func _process(delta):
 
 
 func collect(item: TrashItem):
+	if item.collected: return
+	item.collected = true
 	play_collect_sound(item)
-	item.queue_free()
 	if item.type != collection_type:
 		_on_collection_error()
-		return
+	else:
+		set_fill(fill + item.size)
+		emit_signal("collected", collection_type)
+		print(fill)
+		if fill >= max_fill:
+			score()
 	
-	set_fill(fill + item.size)
-	emit_signal("collected", collection_type)
-	print(fill)
-	if fill >= max_fill:
-		score()
-	
+	item.queue_free()
 
 func score():
 	if fill <= 0: return

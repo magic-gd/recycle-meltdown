@@ -32,6 +32,8 @@ var waste_spawn_table = {
 	"organic": 0.5,
 }
 
+var state = {}
+
 func change_resource(type, amount):
 	if not resources.has(type): return
 	resources[type] += amount

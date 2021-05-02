@@ -5,10 +5,10 @@ signal data_change
 
 var resources = {
 	"dollars": 10000,
-	"paper": 2000,
-	"plastic": 2000,
-	"glass": 2000,
-	"metal": 2000,
+	"paper": 0,
+	"plastic": 0,
+	"glass": 0,
+	"metal": 0,
 }
 
 var factory_output = {

@@ -15,6 +15,7 @@ func _ready():
 	_connect()
 	info_panel.visible = false
 	SaveManager.save()
+	_show_intro()
 
 func _connect():
 	$UI/SortingButton.connect("pressed", self, "_on_factory_pressed", ["sorting"])
@@ -24,17 +25,6 @@ func _connect():
 	$UI/PlasticButton.connect("pressed", self, "_on_factory_pressed", ["plastic"])
 	
 	$UI/InfoPanel/OutsideInfoPanel.connect("pressed", self, "_hide_info_panel")
-
-func goto_factory(type):
-	match type:
-		"glass":
-			get_tree().change_scene("res://screens/GlassFactoryScreen.tscn")
-		"paper":
-			get_tree().change_scene("res://minigames/PaperMinigame/PaperMinigame.tscn")
-		"metal":
-			get_tree().change_scene("res://screens/MetalFactoryScreen.tscn")
-		"plastic":
-			pass
 
 func _hide_info_panel():
 	info_panel.visible = false
@@ -57,3 +47,9 @@ func _on_factory_pressed(type):
 		"plastic": _show_info_panel(plastic_panel_path)
 		"glass": _show_info_panel(glass_panel_path)
 		"metal": _show_info_panel(metal_panel_path)
+
+func _show_intro():
+	if "intro_done" in GameData.state: return
+	GameData.state["intro_done"] = 1
+	
+	$UI/Intro.visible = true

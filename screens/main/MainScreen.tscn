@@ -1,9 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://UI/panels/SortingFactoryInfoPanel.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/temp/factory.png" type="Texture" id=4]
+[ext_resource path="res://screens/Intro.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/objects/buildings/plastic_factory.png" type="Texture" id=3]
+[ext_resource path="res://assets/objects/buildings/paper_factory.png" type="Texture" id=4]
 [ext_resource path="res://screens/main/MainScreen.gd" type="Script" id=5]
 [ext_resource path="res://UI/dashboard/Dashboard.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/objects/buildings/metal_factory.png" type="Texture" id=7]
+[ext_resource path="res://assets/objects/buildings/glass_factory.png" type="Texture" id=8]
+[ext_resource path="res://assets/objects/buildings/sorting_factory.png" type="Texture" id=9]
 
 [node name="MainScreen" type="Control"]
 script = ExtResource( 5 )
@@ -14,12 +19,12 @@ __meta__ = {
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="SortingButton" type="TextureButton" parent="UI"]
-anchor_left = 0.383176
-anchor_top = 0.279719
-anchor_right = 0.629843
-anchor_bottom = 0.437922
+anchor_left = 0.283333
+anchor_top = 0.274414
+anchor_right = 0.67
+anchor_bottom = 0.5
 margin_left = 1.52588e-05
-texture_normal = ExtResource( 4 )
+texture_normal = ExtResource( 9 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": true
@@ -27,10 +32,10 @@ __meta__ = {
 
 [node name="PaperButton" type="TextureButton" parent="UI"]
 self_modulate = Color( 0.866667, 0.937255, 0.737255, 1 )
-anchor_left = 0.677798
-anchor_top = 0.134443
-anchor_right = 0.861131
-anchor_bottom = 0.25456
+anchor_left = 0.645
+anchor_top = 0.136719
+anchor_right = 0.93
+anchor_bottom = 0.299805
 margin_left = 1.52588e-05
 texture_normal = ExtResource( 4 )
 expand = true
@@ -39,39 +44,36 @@ __meta__ = {
 }
 
 [node name="GlassButton" type="TextureButton" parent="UI"]
-self_modulate = Color( 0.254902, 0.709804, 0.8, 1 )
-anchor_left = 0.20951
-anchor_top = 0.571792
-anchor_right = 0.307843
-anchor_bottom = 0.635269
+anchor_left = 0.144523
+anchor_top = 0.55116
+anchor_right = 0.317856
+anchor_bottom = 0.630261
 margin_left = 1.52588e-05
-texture_normal = ExtResource( 4 )
+texture_normal = ExtResource( 8 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
 [node name="MetalButton" type="TextureButton" parent="UI"]
-self_modulate = Color( 0.458824, 0.45098, 0.45098, 1 )
-anchor_left = 0.424102
-anchor_top = 0.570251
-anchor_right = 0.530769
-anchor_bottom = 0.639587
+anchor_left = 0.417721
+anchor_top = 0.543586
+anchor_right = 0.584388
+anchor_bottom = 0.63636
 margin_left = 1.52588e-05
-texture_normal = ExtResource( 4 )
+texture_normal = ExtResource( 7 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
 [node name="PlasticButton" type="TextureButton" parent="UI"]
-self_modulate = Color( 0.552941, 0.541176, 0.227451, 1 )
-anchor_left = 0.66049
-anchor_top = 0.575456
-anchor_right = 0.752157
-anchor_bottom = 0.635026
+anchor_left = 0.66
+anchor_top = 0.530273
+anchor_right = 0.821667
+anchor_bottom = 0.634766
 margin_left = 1.52588e-05
-texture_normal = ExtResource( 4 )
+texture_normal = ExtResource( 3 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": true
@@ -112,3 +114,6 @@ __meta__ = {
 }
 
 [node name="SortingFactoryInfoPanel" parent="UI/InfoPanel/Panel" instance=ExtResource( 1 )]
+
+[node name="Intro" parent="UI" instance=ExtResource( 2 )]
+visible = false

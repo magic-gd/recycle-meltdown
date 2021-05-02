@@ -1,6 +1,7 @@
 extends Node2D
 
 onready var end_screen := $UI/GameOver
+onready var no_paper_info_text := $UI/NoPaperInfoText
 onready var carton_scene := load("res://minigames/PaperMinigame/carton.tscn")
 
 const BOX_WIDTH := 60
@@ -27,6 +28,7 @@ func set_paper_input(duration_till_repeat : float = 20):
 	var paper_waste := float(GameData.factory_output["paper_waste"])
 	if paper_waste > 0.01:
 		spawn_enabled = true
+		no_paper_info_text.visible = false
 		carton_spawn_timeout = duration_till_repeat / paper_waste
 
 func _connect():

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/plastic-3.mp3-88cf4952238370f47679ee899a58726e.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/plastic-3.mp3"
+dest_files=[ "res://.import/plastic-3.mp3-88cf4952238370f47679ee899a58726e.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

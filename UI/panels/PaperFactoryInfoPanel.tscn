@@ -1,0 +1,166 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/UI/icons/resource icons/paper_icon.png" type="Texture" id=1]
+[ext_resource path="res://UI/panels/PaperFactoryInfoPanel.gd" type="Script" id=2]
+[ext_resource path="res://assets/fonts/roboto_20.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/fonts/roboto_42.tres" type="DynamicFont" id=4]
+[ext_resource path="res://assets/UI/icons/trash icons/paper_trash_icon.png" type="Texture" id=5]
+
+[sub_resource type="Theme" id=1]
+default_font = ExtResource( 3 )
+
+[node name="PaperFactoryInfoPanel" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+upgrade_shop_path = "res://UI/shop/sorting shop/PaperUpgradeShop.tscn"
+
+[node name="BG" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PaperFactory" type="Label" parent="VBoxContainer"]
+margin_right = 600.0
+margin_bottom = 50.0
+custom_fonts/font = ExtResource( 4 )
+text = "Paper Factory"
+align = 1
+valign = 1
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="PaperWastePanel" type="Panel" parent="VBoxContainer"]
+margin_top = 54.0
+margin_right = 600.0
+margin_bottom = 134.0
+rect_min_size = Vector2( 0, 80 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PaperWastePanel"]
+anchor_left = 0.353333
+anchor_right = 0.666667
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer/PaperWastePanel/HBoxContainer"]
+margin_right = 78.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.75
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/PaperWastePanel/HBoxContainer"]
+margin_left = 82.0
+margin_right = 188.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 3 )
+text = "0"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PaperPanel" type="Panel" parent="VBoxContainer"]
+margin_top = 138.0
+margin_right = 600.0
+margin_bottom = 218.0
+rect_min_size = Vector2( 0, 80 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PaperPanel"]
+anchor_left = 0.338333
+anchor_right = 0.688333
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer/PaperPanel/HBoxContainer"]
+margin_right = 87.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.75
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/PaperPanel/HBoxContainer"]
+margin_left = 91.0
+margin_right = 209.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 3 )
+text = "0"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Spacer3" type="Control" parent="VBoxContainer"]
+margin_top = 222.0
+margin_right = 600.0
+margin_bottom = 272.0
+rect_min_size = Vector2( 0, 50 )
+
+[node name="WorkButton" type="Button" parent="VBoxContainer"]
+margin_top = 276.0
+margin_right = 600.0
+margin_bottom = 356.0
+rect_min_size = Vector2( 0, 80 )
+text = "Work Shift"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Spacer2" type="Control" parent="VBoxContainer"]
+margin_top = 360.0
+margin_right = 600.0
+margin_bottom = 410.0
+rect_min_size = Vector2( 0, 50 )
+
+[node name="UpgradesButton" type="Button" parent="VBoxContainer"]
+margin_top = 414.0
+margin_right = 600.0
+margin_bottom = 464.0
+rect_min_size = Vector2( 0, 50 )
+text = "Upgrades"
+__meta__ = {
+"_edit_use_anchors_": true
+}

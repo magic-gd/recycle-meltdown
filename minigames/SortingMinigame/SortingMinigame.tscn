@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://assets/temp/gray.png" type="Texture" id=1]
 [ext_resource path="res://minigames/SortingMinigame/SortingMinigame.gd" type="Script" id=2]
@@ -10,6 +10,10 @@
 [ext_resource path="res://minigames/SortingMinigame/EndScreen.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/fonts/roboto_24.tres" type="DynamicFont" id=9]
 [ext_resource path="res://UI/menu/MenuButton.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/UI/icons/trash icons/metal_trash_icon.png" type="Texture" id=11]
+[ext_resource path="res://assets/UI/icons/trash icons/plastic_trash_icon.png" type="Texture" id=12]
+[ext_resource path="res://assets/UI/icons/trash icons/glass_trash_icon.png" type="Texture" id=13]
+[ext_resource path="res://assets/UI/icons/trash icons/paper_trash_icon.png" type="Texture" id=14]
 
 [sub_resource type="Theme" id=1]
 default_font = ExtResource( 9 )
@@ -88,46 +92,134 @@ margin_bottom = -2.0
 [node name="EndScreen" parent="UI" instance=ExtResource( 8 )]
 visible = false
 
-[node name="ScoreDisplay" type="VBoxContainer" parent="UI"]
-anchor_left = 0.737842
-anchor_top = 0.0883798
-anchor_right = 0.984508
-anchor_bottom = 0.21338
+[node name="ScoreDisplay" type="HBoxContainer" parent="UI"]
+anchor_left = 0.214011
+anchor_top = 0.0166016
+anchor_right = 0.790678
+anchor_bottom = 0.0664063
 theme = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PaperScoreLabel" type="Label" parent="UI/ScoreDisplay"]
-margin_right = 147.0
-margin_bottom = 29.0
-text = "Paper: 10"
-align = 1
-valign = 1
+[node name="PaperScore" type="HBoxContainer" parent="UI/ScoreDisplay"]
+margin_right = 83.0
+margin_bottom = 51.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="PlasticScoreLabel" type="Label" parent="UI/ScoreDisplay"]
-margin_top = 33.0
-margin_right = 147.0
-margin_bottom = 62.0
-text = "Paper: 10"
-align = 1
-valign = 1
+[node name="PaperTrashIcon" type="TextureRect" parent="UI/ScoreDisplay/PaperScore"]
+margin_right = 51.0
+margin_bottom = 51.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+texture = ExtResource( 14 )
+expand = true
+stretch_mode = 6
 
-[node name="GlassScoreLabel" type="Label" parent="UI/ScoreDisplay"]
-margin_top = 66.0
-margin_right = 147.0
-margin_bottom = 95.0
-text = "Paper: 10"
+[node name="PaperScoreLabel" type="Label" parent="UI/ScoreDisplay/PaperScore"]
+margin_left = 55.0
+margin_top = 11.0
+margin_right = 83.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+text = "10"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="MetalScoreLabel" type="Label" parent="UI/ScoreDisplay"]
-margin_top = 99.0
-margin_right = 147.0
-margin_bottom = 128.0
-text = "Paper: 10"
+[node name="PlasticScore" type="HBoxContainer" parent="UI/ScoreDisplay"]
+margin_left = 87.0
+margin_right = 171.0
+margin_bottom = 51.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PlasticTrashIcon" type="TextureRect" parent="UI/ScoreDisplay/PlasticScore"]
+margin_right = 52.0
+margin_bottom = 51.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+texture = ExtResource( 12 )
+expand = true
+stretch_mode = 6
+
+[node name="PlasticScoreLabel" type="Label" parent="UI/ScoreDisplay/PlasticScore"]
+margin_left = 56.0
+margin_top = 11.0
+margin_right = 84.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+text = "10"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GlassScoreDisplay" type="HBoxContainer" parent="UI/ScoreDisplay"]
+margin_left = 175.0
+margin_right = 258.0
+margin_bottom = 51.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GlassTrashIcon" type="TextureRect" parent="UI/ScoreDisplay/GlassScoreDisplay"]
+margin_right = 51.0
+margin_bottom = 51.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+texture = ExtResource( 13 )
+expand = true
+stretch_mode = 6
+
+[node name="GlassScoreLabel" type="Label" parent="UI/ScoreDisplay/GlassScoreDisplay"]
+margin_left = 55.0
+margin_top = 11.0
+margin_right = 83.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+text = "10"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MetalScoreDisplay" type="HBoxContainer" parent="UI/ScoreDisplay"]
+margin_left = 262.0
+margin_right = 346.0
+margin_bottom = 51.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MetalTrashIcon" type="TextureRect" parent="UI/ScoreDisplay/MetalScoreDisplay"]
+margin_right = 52.0
+margin_bottom = 51.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+texture = ExtResource( 11 )
+expand = true
+stretch_mode = 6
+
+[node name="MetalScoreLabel" type="Label" parent="UI/ScoreDisplay/MetalScoreDisplay"]
+margin_left = 56.0
+margin_top = 11.0
+margin_right = 84.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+text = "10"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="MenuButton" parent="UI" instance=ExtResource( 10 )]
 anchor_left = 0.0062498

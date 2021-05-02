@@ -1,4 +1,4 @@
-tool
+#tool
 extends Area2D
 
 signal score
@@ -45,22 +45,59 @@ func _process(delta):
 
 
 func collect(item: TrashItem):
-	item.queue_free()
+	if item.collected: return
+	item.collected = true
+	play_collect_sound(item)
 	if item.type != collection_type:
 		_on_collection_error()
-		return
+	else:
+		set_fill(fill + item.size)
+		emit_signal("collected", collection_type)
+		print(fill)
+		if fill >= max_fill:
+			score()
 	
-	set_fill(fill + item.size)
-	emit_signal("collected", collection_type)
-	print(fill)
-	if fill >= max_fill:
-		score()
+	item.queue_free()
 
 func score():
 	if fill <= 0: return
 	print("scoring %s" % fill)
 	emit_signal("score", collection_type, fill)
 	set_fill(0)
+
+func play_collect_sound(item):
+	var sounds
+	match item.type:
+		"paper":
+			sounds = [
+				"res://assets/sound/paper-1.mp3",
+				"res://assets/sound/paper-2.mp3",
+			]
+		"plastic":
+			sounds = [
+				"res://assets/sound/plastic-1.mp3",
+				"res://assets/sound/plastic-2.mp3",
+				"res://assets/sound/plastic-3.mp3",
+			]
+			# Only plastic bottle makes plastic bottle sound
+			if item.get_node("Sprite").frame != 2:
+				sounds.remove(0)
+		"glass":
+			sounds = [
+				"res://assets/sound/glass-1.mp3",
+				"res://assets/sound/glass-2.mp3",
+				"res://assets/sound/glass-3.mp3",
+				"res://assets/sound/glass-4.mp3",
+			]
+		"metal":
+			sounds = [
+				"res://assets/sound/metal-1.mp3",
+				"res://assets/sound/metal-2.mp3",
+			]
+	
+	if not sounds: return
+	var sound = sounds[randi() % sounds.size()]
+	SoundEffectPlayer.play(sound)
 
 func _ship_trash():
 	get_tree().paused = true

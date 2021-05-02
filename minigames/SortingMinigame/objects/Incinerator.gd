@@ -11,3 +11,4 @@ func burn(item: TrashItem):
 	item.queue_free()
 	$AnimationPlayer.play("burn")
 	emit_signal("burned", item)
+	SoundEffectPlayer.play("res://assets/sound/burn-1.mp3")

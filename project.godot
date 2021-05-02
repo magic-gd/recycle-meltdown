@@ -29,6 +29,8 @@ config/icon="res://icon.png"
 GameData="*res://global/gamedata/GameData.tscn"
 SceneManager="*res://global/SceneManager.tscn"
 UpgradeManager="*res://global/UpgradeManager.gd"
+GameOptions="*res://global/GameOptions.tscn"
+SoundEffectPlayer="*res://global/SoundEffectPlayer.tscn"
 
 [display]
 

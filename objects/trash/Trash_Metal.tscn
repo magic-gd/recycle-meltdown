@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://assets/objects/trash/can.png" type="Texture" id=1]
+[ext_resource path="res://assets/objects/trash/metals.png" type="Texture" id=1]
 [ext_resource path="res://objects/trash/TrashItem.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -19,6 +19,7 @@ fuel = 0.0
 position = Vector2( 0, -19.456 )
 scale = Vector2( 0.18935, 0.18935 )
 texture = ExtResource( 1 )
+hframes = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.210213, 0.210228 )

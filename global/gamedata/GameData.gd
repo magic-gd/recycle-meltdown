@@ -4,7 +4,7 @@ signal resource_change
 signal data_change
 
 var resources = {
-	"dollars": 1000,
+	"dollars": 10000,
 	"paper": 2000,
 	"plastic": 2000,
 	"glass": 2000,
@@ -31,6 +31,8 @@ var waste_spawn_table = {
 	"metal": 5.0,
 	"organic": 0.5,
 }
+
+var state = {}
 
 func change_resource(type, amount):
 	if not resources.has(type): return

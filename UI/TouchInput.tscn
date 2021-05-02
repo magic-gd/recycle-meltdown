@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://UI/TouchInput.gd" type="Script" id=1]
+[ext_resource path="res://assets/temp/arrow.png" type="Texture" id=2]
+[ext_resource path="res://assets/temp/arrow_pressed.png" type="Texture" id=3]
+
+[node name="TouchInput" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 824.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RightButton" type="TouchScreenButton" parent="."]
+position = Vector2( 327.121, 64.2724 )
+scale = Vector2( 0.5, 0.5 )
+normal = ExtResource( 2 )
+pressed = ExtResource( 3 )
+passby_press = true
+action = "move_right"
+visibility_mode = 1
+
+[node name="LeftButton" type="TouchScreenButton" parent="."]
+position = Vector2( 273.179, 191.357 )
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+normal = ExtResource( 2 )
+pressed = ExtResource( 3 )
+passby_press = true
+action = "move_left"
+visibility_mode = 1
+
+[node name="JumpButton" type="TouchScreenButton" parent="."]
+position = Vector2( 237.199, 128 )
+rotation = -1.5708
+scale = Vector2( 0.5, 0.5 )
+normal = ExtResource( 2 )
+pressed = ExtResource( 3 )
+passby_press = true
+action = "jump"
+visibility_mode = 1

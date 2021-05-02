@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Conveyor_Belt.mp3-69b3b6e623658dd2e84678d89d733ef2.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/raw/Conveyor_Belt.mp3"
+dest_files=[ "res://.import/Conveyor_Belt.mp3-69b3b6e623658dd2e84678d89d733ef2.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

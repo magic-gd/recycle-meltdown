@@ -1,6 +1,8 @@
 extends Control
 
-const SORTING_PANEL_PATH = "res://UI/panels/SortingFactoryInfoPanel.tscn"
+export var sorting_panel_path = "res://UI/panels/SortingFactoryInfoPanel.tscn"
+export var paper_panel_path = "res://UI/panels/PaperFactoryInfoPanel.tscn"
+
 
 onready var info_panel = $UI/InfoPanel
 onready var info_panel_panel = $UI/InfoPanel/Panel # what u lookin at
@@ -11,11 +13,11 @@ func _ready():
 	info_panel.visible = false
 
 func _connect():
-	$UI/SortingButton.connect("pressed", self, "_on_sorting_pressed")
-	$UI/GlassButton.connect("pressed", self, "goto_factory", ["glass"])
-	$UI/PaperButton.connect("pressed", self, "goto_factory", ["paper"])
-	$UI/MetalButton.connect("pressed", self, "goto_factory", ["metal"])
-	$UI/PlasticButton.connect("pressed", self, "goto_factory", ["plastic"])
+	$UI/SortingButton.connect("pressed", self, "_on_factory_pressed", ["sorting"])
+	$UI/GlassButton.connect("pressed", self, "_on_factory_pressed", ["glass"])
+	$UI/PaperButton.connect("pressed", self, "_on_factory_pressed", ["paper"])
+	$UI/MetalButton.connect("pressed", self, "_on_factory_pressed", ["metal"])
+	$UI/PlasticButton.connect("pressed", self, "_on_factory_pressed", ["plastic"])
 	
 	$UI/InfoPanel/OutsideInfoPanel.connect("pressed", self, "_hide_info_panel")
 
@@ -44,5 +46,7 @@ func _clear_info_panel():
 	for child in info_panel_panel.get_children():
 		child.queue_free()
 
-func _on_sorting_pressed():
-	_show_info_panel(SORTING_PANEL_PATH)
+func _on_factory_pressed(type):
+	match type:
+		"sorting": _show_info_panel(sorting_panel_path)
+		"paper": _show_info_panel(paper_panel_path)

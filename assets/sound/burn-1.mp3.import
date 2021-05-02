@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/burn-1.mp3-4c1f0c5b8df67ca06cd8b339f646de1f.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/burn-1.mp3"
+dest_files=[ "res://.import/burn-1.mp3-4c1f0c5b8df67ca06cd8b339f646de1f.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/paper-1.mp3-4bd3482bad4e10cca91e5d6b021662e8.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/paper-1.mp3"
+dest_files=[ "res://.import/paper-1.mp3-4bd3482bad4e10cca91e5d6b021662e8.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

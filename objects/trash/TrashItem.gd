@@ -9,6 +9,7 @@ export var fuel = 1.0
 export var draggable = true
 
 var pressed = false
+var collected = false
 
 func _ready():
 	$DragArea.connect("input_event", self, "_on_input_event")

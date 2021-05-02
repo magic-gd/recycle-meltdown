@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://UI/dashboard/ResourceDisplay.gd" type="Script" id=1]
+[ext_resource path="res://assets/temp/dollar.png" type="Texture" id=2]
+
+[node name="ResourceDisplay" type="Panel"]
+anchor_right = 0.238333
+anchor_bottom = 0.0537109
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Icon" type="TextureRect" parent="HBoxContainer"]
+margin_right = 46.0
+margin_bottom = 54.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+margin_left = 50.0
+margin_top = 20.0
+margin_right = 142.0
+margin_bottom = 34.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "999"
+align = 1
+valign = 1
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": true
+}

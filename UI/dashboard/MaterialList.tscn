@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/fonts/roboto_20.tres" type="DynamicFont" id=1]
 [ext_resource path="res://UI/dashboard/MaterialList.gd" type="Script" id=2]
+[ext_resource path="res://assets/UI/icons/resource icons/glass_icon.png" type="Texture" id=3]
+[ext_resource path="res://assets/UI/icons/resource icons/plastic_icon.png" type="Texture" id=4]
+[ext_resource path="res://assets/UI/icons/resource icons/metal_icon.png" type="Texture" id=5]
+[ext_resource path="res://assets/UI/icons/resource icons/paper_icon.png" type="Texture" id=6]
 
 [node name="MaterialList" type="Control"]
 anchor_right = 0.543333
@@ -19,15 +23,15 @@ __meta__ = {
 }
 
 [node name="WasteMaterials" type="VBoxContainer" parent="HBoxContainer"]
-margin_right = 161.0
-margin_bottom = 297.0
+margin_right = 160.0
+margin_bottom = 296.0
 size_flags_horizontal = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="PaperWastePanel" type="Panel" parent="HBoxContainer/WasteMaterials"]
-margin_right = 161.0
+margin_right = 160.0
 margin_bottom = 71.0
 size_flags_vertical = 3
 
@@ -46,7 +50,7 @@ __meta__ = {
 
 [node name="PlasticWastePanel" type="Panel" parent="HBoxContainer/WasteMaterials"]
 margin_top = 75.0
-margin_right = 161.0
+margin_right = 160.0
 margin_bottom = 146.0
 size_flags_vertical = 3
 
@@ -65,7 +69,7 @@ __meta__ = {
 
 [node name="GlassWastePanel" type="Panel" parent="HBoxContainer/WasteMaterials"]
 margin_top = 150.0
-margin_right = 161.0
+margin_right = 160.0
 margin_bottom = 221.0
 size_flags_vertical = 3
 
@@ -84,8 +88,8 @@ __meta__ = {
 
 [node name="MetalWastePanel" type="Panel" parent="HBoxContainer/WasteMaterials"]
 margin_top = 225.0
-margin_right = 161.0
-margin_bottom = 297.0
+margin_right = 160.0
+margin_bottom = 296.0
 size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="HBoxContainer/WasteMaterials/MetalWastePanel"]
@@ -102,9 +106,9 @@ __meta__ = {
 }
 
 [node name="Materials" type="VBoxContainer" parent="HBoxContainer"]
-margin_left = 165.0
-margin_right = 326.0
-margin_bottom = 297.0
+margin_left = 164.0
+margin_right = 325.0
+margin_bottom = 296.0
 size_flags_horizontal = 3
 __meta__ = {
 "_edit_use_anchors_": false
@@ -115,11 +119,34 @@ margin_right = 161.0
 margin_bottom = 71.0
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="HBoxContainer/Materials/PaperPanel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/Materials/PaperPanel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Icon" type="TextureRect" parent="HBoxContainer/Materials/PaperPanel/HBoxContainer"]
+margin_right = 67.0
+margin_bottom = 71.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.75
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HBoxContainer/Materials/PaperPanel/HBoxContainer"]
+margin_left = 71.0
+margin_right = 161.0
+margin_bottom = 71.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_fonts/font = ExtResource( 1 )
-text = "Paper: 0"
+text = "0"
 align = 1
 valign = 1
 autowrap = true
@@ -134,11 +161,34 @@ margin_right = 161.0
 margin_bottom = 146.0
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="HBoxContainer/Materials/PlasticPanel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/Materials/PlasticPanel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Icon" type="TextureRect" parent="HBoxContainer/Materials/PlasticPanel/HBoxContainer"]
+margin_right = 67.0
+margin_bottom = 71.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.75
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HBoxContainer/Materials/PlasticPanel/HBoxContainer"]
+margin_left = 71.0
+margin_right = 161.0
+margin_bottom = 71.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_fonts/font = ExtResource( 1 )
-text = "Plastic: 0"
+text = "0"
 align = 1
 valign = 1
 autowrap = true
@@ -153,11 +203,34 @@ margin_right = 161.0
 margin_bottom = 221.0
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="HBoxContainer/Materials/GlassPanel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/Materials/GlassPanel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Icon" type="TextureRect" parent="HBoxContainer/Materials/GlassPanel/HBoxContainer"]
+margin_right = 67.0
+margin_bottom = 71.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.75
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HBoxContainer/Materials/GlassPanel/HBoxContainer"]
+margin_left = 71.0
+margin_right = 161.0
+margin_bottom = 71.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_fonts/font = ExtResource( 1 )
-text = "Glass: 0"
+text = "0"
 align = 1
 valign = 1
 autowrap = true
@@ -169,14 +242,37 @@ __meta__ = {
 [node name="MetalPanel" type="Panel" parent="HBoxContainer/Materials"]
 margin_top = 225.0
 margin_right = 161.0
-margin_bottom = 297.0
+margin_bottom = 296.0
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="HBoxContainer/Materials/MetalPanel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/Materials/MetalPanel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Icon" type="TextureRect" parent="HBoxContainer/Materials/MetalPanel/HBoxContainer"]
+margin_right = 67.0
+margin_bottom = 71.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.75
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HBoxContainer/Materials/MetalPanel/HBoxContainer"]
+margin_left = 71.0
+margin_right = 161.0
+margin_bottom = 71.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_fonts/font = ExtResource( 1 )
-text = "Metal: 0"
+text = "0"
 align = 1
 valign = 1
 autowrap = true

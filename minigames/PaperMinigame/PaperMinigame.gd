@@ -1,9 +1,11 @@
 extends Node2D
 
+const BOX_WIDTH := 60
+const ROW_SIZE = 10
+
 onready var end_screen := $UI/GameOver
 onready var carton_scene := load("res://minigames/PaperMinigame/carton.tscn")
-
-const BOX_WIDTH := 60
+onready var grid_map = $GridTileMap
 
 var elapsed_time : float = 0 # time since the last carton spawn
 var carton_spawn_timeout : float = 5 # seconds. Overwritten by paper input
@@ -33,7 +35,6 @@ func set_paper_input(duration_till_repeat : float = 20):
 
 func _connect():
 	$UI/MenuButton.connect("exit", SceneManager, "goto_main")
-	$Ground.connect("score", self, "score")
 
 func _process(delta):
 	elapsed_time += delta
@@ -41,6 +42,8 @@ func _process(delta):
 	if elapsed_time >= carton_spawn_timeout:
 		elapsed_time = 0
 		spawn_carton(randi() % cols)
+	
+	_check_row_full()
 
 func score(amount : int = 1):
 	if scoring_enabled:
@@ -71,6 +74,17 @@ func spawn_carton(col : int):
 func decrease_spawn_timeout(scale : float = 0.05, minimum : float = 0.8):
 	var decrease = log(carton_spawn_timeout + 1) * scale
 	carton_spawn_timeout = max(carton_spawn_timeout - decrease, minimum)
+
+func _check_row_full():
+	var bottom_row_cartons = []
+	for obj in $CartonDetector.get_overlapping_bodies():
+		if obj.is_in_group("cartons"):
+			bottom_row_cartons.append(obj)
+	
+	if bottom_row_cartons.size() >= ROW_SIZE:
+		for carton in bottom_row_cartons:
+			carton.queue_free()
+		score(100)
 
 func _apply_upgrades():
 	if "paper_double_jump" in GameData.upgrades:

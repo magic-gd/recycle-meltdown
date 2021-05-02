@@ -20,10 +20,10 @@ __meta__ = {
 }
 
 [node name="RightButton" type="TextureButton" parent="."]
-margin_left = 353.99
-margin_top = 877.039
-margin_right = 445.99
-margin_bottom = 969.039
+margin_left = 350.0
+margin_top = 915.72
+margin_right = 442.0
+margin_bottom = 1007.72
 texture_normal = ExtResource( 2 )
 expand = true
 __meta__ = {
@@ -31,10 +31,10 @@ __meta__ = {
 }
 
 [node name="LeftButton" type="TextureButton" parent="."]
-margin_left = 261.128
-margin_top = 871.483
-margin_right = 353.128
-margin_bottom = 963.483
+margin_left = 250.0
+margin_top = 916.417
+margin_right = 342.0
+margin_bottom = 1008.42
 rect_scale = Vector2( -1, 1 )
 texture_normal = ExtResource( 2 )
 expand = true
@@ -43,17 +43,16 @@ __meta__ = {
 }
 
 [node name="JumpButton" type="TextureButton" parent="."]
-margin_left = 265.096
-margin_top = 917.518
-margin_right = 357.096
-margin_bottom = 1009.52
+margin_left = 250.0
+margin_top = 924.742
+margin_right = 350.0
+margin_bottom = 1024.74
 rect_rotation = -90.0
 texture_normal = ExtResource( 2 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
 [connection signal="button_down" from="RightButton" to="." method="_on_RightButton_button_down"]
 [connection signal="button_up" from="RightButton" to="." method="_on_RightButton_button_up"]
 [connection signal="button_down" from="LeftButton" to="." method="_on_LeftButton_button_down"]

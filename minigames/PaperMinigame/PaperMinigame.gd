@@ -1,22 +1,27 @@
 extends Node2D
 
-var carton_scene : Resource
+onready var end_screen := $UI/GameOver
+onready var carton_scene := load("res://minigames/PaperMinigame/carton.tscn")
+
+const BOX_WIDTH := 60
+
 var elapsed_time : float = 0 # time since the last carton spawn
-var carton_spawn_timeout : float = 5 # seconds
+var carton_spawn_timeout : float = 5 # seconds. Overwritten by paper input
 var spawn_enabled := false
 var scoring_enabled := true
 var width : float
 var cols : int
-const BOX_WIDTH := 60
+var collected_paper : int = 0
 
 func _ready():
 	_connect()
-	carton_scene = load("res://minigames/PaperMinigame/carton.tscn")
+	randomize()
+	
 	width = get_viewport().size.x
 	cols = int(floor(width / BOX_WIDTH))
-	elapsed_time = 4 # shorten time until first carton spawn
+	
 	set_paper_input()
-	randomize()
+	elapsed_time = carton_spawn_timeout # shorten time until first carton spawn
 	
 func set_paper_input(duration_till_repeat : float = 20):
 	var paper_waste := float(GameData.factory_output["paper_waste"])
@@ -25,7 +30,7 @@ func set_paper_input(duration_till_repeat : float = 20):
 		carton_spawn_timeout = duration_till_repeat / paper_waste
 
 func _connect():
-	$CanvasLayer/MenuButton.connect("exit", SceneManager, "goto_main")
+	$UI/MenuButton.connect("exit", SceneManager, "goto_main")
 	$Ground.connect("score", self, "score")
 
 func _process(delta):
@@ -35,17 +40,21 @@ func _process(delta):
 		elapsed_time = 0
 		spawn_carton(randi() % cols)
 
-func score(amount):
+func score(amount : int = 1):
 	if scoring_enabled:
+		collected_paper += amount
 		GameData.change_resource("paper", amount)
 		
-func game_over():
-	# TODO: game over screen
+func game_over(reason : String = ""):
+	end_screen.set_reason(reason)
+	end_screen.set_paper(collected_paper)
+	end_screen.visible = true
 	spawn_enabled = false
 	scoring_enabled = false
 	
 func _on_Player_game_over():
-	game_over()
+	game_over("A worker went missing under all that paper!\n"
+		+"We have to pause the machines and help him out of there first.")
 
 func spawn_carton(col : int):
 	if not spawn_enabled: return

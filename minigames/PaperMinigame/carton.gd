@@ -54,7 +54,7 @@ func enforce_grid(x_pos : float, include_offset : bool) -> float:
 	
 func check_fullness():
 	if position.y < MOVE_DIST:
-		game_manager.game_over()
+		game_manager.game_over("Oh no, looks like we have a blockage here.")
 
 func diff(a : float, b : float) -> float:
 	if a > b: return a - b

@@ -71,7 +71,7 @@ margin_left = 39.0
 margin_top = -140.0
 margin_right = 68.0
 margin_bottom = 141.0
-value = 50.0
+max_value = 5.0
 texture_progress = ExtResource( 2 )
 fill_mode = 3
 nine_patch_stretch = true
@@ -86,7 +86,7 @@ margin_top = -95.7442
 margin_right = 36.9571
 margin_bottom = -66.7442
 custom_fonts/font = ExtResource( 3 )
-text = "Plastic"
+text = "paper"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -96,3 +96,6 @@ pause_mode = 2
 anims/contanimated = SubResource( 2 )
 anims/reset = SubResource( 3 )
 anims/ship = SubResource( 4 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+pause_mode = 2

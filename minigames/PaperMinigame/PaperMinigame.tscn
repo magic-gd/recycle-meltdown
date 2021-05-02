@@ -2,7 +2,7 @@
 
 [ext_resource path="res://minigames/PaperMinigame/PaperMinigame.gd" type="Script" id=1]
 [ext_resource path="res://assets/minigames/sort minigame/conveyor_old.png" type="Texture" id=2]
-[ext_resource path="res://assets/minigames/PaperMinigame/player.png" type="Texture" id=3]
+[ext_resource path="res://assets/minigames/PaperMinigame/forklift_0.png" type="Texture" id=3]
 [ext_resource path="res://minigames/PaperMinigame/Player.gd" type="Script" id=4]
 [ext_resource path="res://minigames/PaperMinigame/Ground.gd" type="Script" id=5]
 [ext_resource path="res://UI/menu/MenuButton.tscn" type="PackedScene" id=6]
@@ -62,8 +62,18 @@ __meta__ = {
 [node name="PlayerCollider" type="CollisionShape2D" parent="Player"]
 shape = SubResource( 3 )
 
-[node name="PlayerSprite" type="Sprite" parent="Player"]
-scale = Vector2( 0.4, 0.4 )
+[node name="SpriteR" type="Sprite" parent="Player"]
+visible = false
+position = Vector2( 6, -8 )
+scale = Vector2( -0.047, 0.048 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="SpriteL" type="Sprite" parent="Player"]
+position = Vector2( -6, -8 )
+scale = Vector2( 0.048, 0.048 )
 texture = ExtResource( 3 )
 
 [node name="PlayerArea" type="Area2D" parent="Player"]
@@ -110,8 +120,6 @@ autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="TouchInput" parent="UI" instance=ExtResource( 9 )]
 
 [node name="Top" type="HBoxContainer" parent="UI"]
 anchor_right = 1.0
@@ -169,6 +177,8 @@ resource_type = "paper"
 
 [node name="GameOver" parent="UI" instance=ExtResource( 10 )]
 visible = false
+
+[node name="TouchInput" parent="UI" instance=ExtResource( 9 )]
 
 [node name="TileMap" type="TileMap" parent="."]
 cell_size = Vector2( 60, 60 )

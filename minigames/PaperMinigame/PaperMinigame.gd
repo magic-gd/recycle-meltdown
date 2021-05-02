@@ -56,6 +56,7 @@ func game_over(reason : String = ""):
 	scoring_enabled = false
 	
 func _on_Player_game_over():
+	yield(get_tree().create_timer(1), "timeout")
 	game_over("A worker went missing under all that paper!\n"
 		+"We have to pause the machines and help him out of there first.")
 
